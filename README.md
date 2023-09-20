@@ -1,17 +1,15 @@
 # Project Title
 
 ## 1. Project Description
-
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ...
+<<<<<<< HEAD
+Imagine a world where communities come together to share experiences and events.
 
 ## 2. Names of Contributors
-
-List team members and/or short bio's here...
-
-- Hi, my name is Carol! I am excited to start this journey of creating a web application!
-- ...
-- Helo helo, my name is Eugenie. I have no experience outside of python but I was pretty good at the snake language. 
+List team members and/or short bio's here... 
+* I'm Evin I like computer
+* - Filip! I'm the epic one who has experience in just about everything. A jack of all trades, if you will.
+* - Hi, my name is Carol! I am excited to start this journey of creating a web application!
+* - Helo helo, my name is Eugenie. I have no experience outside of python but I was pretty good at the snake language. 
 
 ## 3. Technologies and Resources Used
 
@@ -26,18 +24,26 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 
 State what a user needs to do when they come to your project. How do others start using your code or application?
 Here are the steps ...
+<<<<<<< HEAD
+* - Leave.
+=======
 
 - ...
 - ...
 - ...
+>>>>>>> a6206f90a2f5664b8e28426c46a726fd44a47fc4
 
 ## 5. Known Bugs and Limitations
 
 Here are some known bugs:
+<<<<<<< HEAD
+* - None, my coding is perfect.
+=======
 
 - ...
 - ...
 - ...
+>>>>>>> a6206f90a2f5664b8e28426c46a726fd44a47fc4
 
 ## 6. Features for Future
 
