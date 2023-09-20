@@ -8,20 +8,9 @@ Imagine a world where communities come together to share experiences and events.
 List team members and/or short bio's here... 
 * I'm Evin I like computer
 * - Filip! I'm the epic one who has experience in just about everything. A jack of all trades, if you will.
-* ...
+* - Hi, my name is Carol! I am excited to start this journey of creating a web application!
 	
 =======
-
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ...
-
-## 2. Names of Contributors
-
-List team members and/or short bio's here...
-
-- Hi, my name is Carol! I am excited to start this journey of creating a web application!
-- ...
-- ...
 
 >>>>>>> a6206f90a2f5664b8e28426c46a726fd44a47fc4
 ## 3. Technologies and Resources Used
