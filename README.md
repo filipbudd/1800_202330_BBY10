@@ -6,10 +6,10 @@ Imagine a world where communities come together to share experiences and events.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* I'm Evin I like computer CONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICT
-* - Filip! I'm the epic one who has experience in just about everything. A jack of all trades, if you will.
-* - Hi, my name is Carol! I am excited to start this journey of creating a web application!
-* - Helo helo, my name is Eugenie. I have no experience outside CONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICTCONFLICTof python but I was pretty good at the snake language. 
+* I'm Evin I like computer
+* Filip! I'm the epic one who has experience in just about everything. A jack of all trades, if you will.
+* Hi, my name is Carol! I am excited to start this journey of creating a web application!
+* Helo helo, my name is Eugenie. I have no experience outside of python but I was pretty good at the snake language. 
 
 ## 3. Technologies and Resources Used
 
