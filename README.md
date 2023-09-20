@@ -11,6 +11,7 @@ List team members and/or short bio's here...
 * Hi, my name is Carol! I am excited to start this journey of creating a web application!
 * Helo helo, my name is Eugenie. I have no experience outside of python but I was pretty good at the snake language. 
 
+
 ## 3. Technologies and Resources Used
 
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
