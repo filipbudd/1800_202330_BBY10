@@ -1,5 +1,5 @@
 .spinning-earth {
-    animation: rotation 50s infinite linear;
+  animation: rotation 50s infinite linear;
 }
 
 @keyframes rotation {
