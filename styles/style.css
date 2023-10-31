@@ -10,3 +10,15 @@
     transform: rotate(359deg);
   }
 }
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Changa', sans-serif;
+}
+
+p, div, body {
+    font-family: 'Sometype Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+ }
