@@ -22,3 +22,10 @@ p, div, body {
 html {
   scroll-behavior: smooth;
  }
+
+#account-pic{
+  border-radius:50px;
+}
+#account-info{
+  height: 300px;
+}
