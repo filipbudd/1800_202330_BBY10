@@ -41,12 +41,24 @@
       <li class="breadcrumb-item active" aria-current="page">Sports</li>
     </ol>
   </nav>
+  <!--Sort By-->
+  <div class="d-inline form-group px-2 col">
+    <span>Sort By:</span>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Ages</option>
+      <option value="1">2 and under</option>
+      <option value="2">3-5</option>
+      <option value="3">6-12</option>
+      <option value="3">13-18</option>
+      <option value="3">19+</option>
+    </select>
+  </div>
   <!--Search Filter-->
-  <button class="btn dropdown-toggler" type="button" id="dropdownFilterButton" data-target="#filterMenu"
+  <button class="d-inline btn dropdown-toggler m-2" type="button" id="dropdownFilterButton" data-target="#filterMenu"
     data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
     Filter
-    <span class="caret"></span>
   </button>
+
   <div id="filterMenu" class="collapse mx-auto p-3">
     <form class="px-5 py-5">
       <div class="form-group">
@@ -173,6 +185,7 @@
       <input class="btn btn-primary" type="submit" value="Apply"></button>
     </form>
   </div>
+
   <!--card-->
   <div class="row mb-2">
     <div class="col-md-6">
