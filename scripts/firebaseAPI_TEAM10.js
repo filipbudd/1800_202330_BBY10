@@ -13,3 +13,29 @@
 
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+
+
+
+
+
+
+
+
+  //DON'T ACTUALLY USE THIS YET BUT WE'LL PROBABLY NEED IT LATER
+  function writeHikes() {
+    //define a variable for the collection you want to create in Firestore to populate data
+    var eventsRef = db.collection("events");
+
+    eventsRef.add({
+      
+        eventName: "",
+        eventHost: "",
+        eventLocation: "",
+        eventDate: "",
+        eventDescription: "",
+
+        lastUpdated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+    });
+}
