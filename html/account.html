@@ -3,12 +3,10 @@
 
 <head>
   <title>Account</title>
-  <meta name="comp1800 template" content="My 1800 App" />
-
-  <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap Library CSS CDN go here -->
@@ -19,8 +17,13 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-  <!-- Other libraries go here -->
+  <!--Fonts from Google-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa&family=Sometype+Mono&display=swap" rel="stylesheet">
 
+  <!-- Google Icons (Material Design)-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="/styles/style.css" />
 </head>
@@ -32,6 +35,13 @@
   <nav id="navPlaceholder"></nav>
 
   <!--Profile -->
+  <div class="container-fluid bg-light text-dark p-5">
+    <div class="container bg-light p-5">
+      <h1 class="display-4">
+        Welcome, [name]<span id="name-goes-here"></span>
+      </h1>   
+  </div>
+
   
   <img src="/images/profilePic.png" class="mx-auto d-block" name="Profile Picture" id="account-pic">
   <h3 class="text-center">Level: <span id="account-level">000000</span> <img src=".." id="badge"></h3>
