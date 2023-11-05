@@ -24,7 +24,7 @@
 
 
   //DON'T ACTUALLY USE THIS YET BUT WE'LL PROBABLY NEED IT LATER
-  function writeHikes() {
+  function writeEvents() {
     //define a variable for the collection you want to create in Firestore to populate data
     var eventsRef = db.collection("events");
 
