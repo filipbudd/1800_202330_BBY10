@@ -7,14 +7,14 @@ function bookmark(){
     }
 }
 
-function updateBookmark(){
-    db.collection("events").doc("CKMMGiUDrJKDjigW8aHP").update({
-        "bookmarked": true
-    }).then(function(){
-        console.log("this worked?");
-    });
+function addBookmark(){
+    let params = new URL( window.location.href ); //get URL of search bar
+    let EventID = params.searchParams.get( "docID" ); //get value for key "id"
+    let userRef = "J2A4IddxuURAJsYt0cEn3Kc5Nx73"; //this should not be hardcoded
+    
+    db.collection("users").document(userRef).collection("bookmarks").add(EventID)
+    
 }
-
 
 
 
@@ -87,4 +87,4 @@ function displayPageDynamically(collection) {
         })
 }
 
-displayCardsDynamically("events");  //input param is the name of the collection
+displayPageDynamically("events");  //input param is the name of the collection=
