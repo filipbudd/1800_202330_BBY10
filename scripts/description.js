@@ -7,7 +7,3 @@ function bookmark(){
     }
 }
 
-function addBookmark(){
-    var eventsRef = db.collection("events").;
-    var userRef = db.collection("users");
-}
