@@ -7,10 +7,7 @@ function bookmark(){
     }
 }
 
-function updateBookmark(){
-    db.collection("events").doc("CKMMGiUDrJKDjigW8aHP").update({
-        "bookmarked": true
-    }).then(function(){
-        console.log("this worked?");
-    });
+function addBookmark(){
+    var eventsRef = db.collection("events").;
+    var userRef = db.collection("users");
 }
