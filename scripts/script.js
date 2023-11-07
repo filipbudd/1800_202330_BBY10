@@ -1,5 +1,6 @@
+//DO NOT DELETE THIS FILE- IT IS CRUCIAL FOR THE DEVELOPMENT
 function sayHello() {
-    console.log("THIS FUNCTION IS FUNCTIONAL");
+    console.log("I PLAY GENSHIN");
 }
 
 sayHello();
