@@ -57,12 +57,12 @@ function displayPageDynamically(collection) {
 
     db.collection(collection).get("events")   
         .then(allInfo=> {
-            
+
             allInfo.forEach(doc => { 
                 var title = doc.data().eventName;       
                 var details = doc.data().eventDescription;
                 var host = doc.data().eventHost;
-                var address = doc.data().eventLocation; //Might have to change this later
+                var address = doc.data().eventLocation;
                 var price = doc.data().eventPrice;
                 var date = doc.data().eventDate;
                 var priceStatus = doc.data().eventPriceStatus;
