@@ -16,6 +16,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+    
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
 
   <!--Fonts from Google-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +49,7 @@
   <div class="container-fluid bg-light text-dark p-5">
     <div class="container bg-light p-5">
       <h1 class="display-4">
-        Welcome, [name]<span id="name-goes-here"></span>
+        Welcome, <span id="user-name"></span><span id="name-goes-here"></span>
       </h1>
     </div>
 
@@ -55,7 +66,7 @@
   </div>
 
     <div id="account-info" class="card-body border">
-      <h3 id="account-name" class="card-title">NAME</h3>
+      <h3 id="account-name" class="card-title"><span id="user-name"></span><span id="name-goes-here"></span></h3>
       <div id="Description" class="h-50">DESCRIPTION DESCRIPTION</div>
     </div>
 
@@ -83,6 +94,8 @@
       <!-- Link to scripts of your own -->
       <script src="/scripts/skeleton.js"></script>
       <script src="/scripts/script.js"></script>
+      <script type="module" src="/scripts/userProfile.js"></script>
+        <script src="/scripts/firebaseAPI_TEAM10.js"></script>
 </body>
 
 </html>
