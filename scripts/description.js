@@ -8,11 +8,27 @@ function bookmark(){
 }
 
 function addBookmark(){
-    let params = new URL( window.location.href ); //get URL of search bar
-    let EventID = params.searchParams.get( "docID" ); //get value for key "id"
-    let userRef = "J2A4IddxuURAJsYt0cEn3Kc5Nx73"; //this should not be hardcoded
-    
-    db.collection("users").document(userRef).collection("bookmarks").add(EventID)
+    let icon = document.getElementById("i_bookmark-icon").className;
+
+    var bookmarksRef = db.collection("users").doc("J2A4IddxuURAJsYt0cEn3Kc5Nx73").collection("bookmarks"); //user collection should not be hardcoded
+    var eventsRef = db.collection("events");
+    var eventID = "CKMMGiUDrJKDjigW8aHP"
+
+    if (icon == "material-symbols-outlined"){
+        eventsRef.doc(eventID) // should not be hardcoded
+    .get()
+    .then(doc => {
+        thisEvent = doc.data();
+        bookmarksRef.add(thisEvent);
+    });
+    } else {
+        console.log("nope");
+    }
+    //define a variable for the collection you want to create in Firestore to populate data
+   
+
+    //let params = new URL( window.location.href ); //get URL of search bar
+    //let EventID = params.searchParams.get( "docID" ); //get value for key "id"
     
 }
 
@@ -85,4 +101,4 @@ function displayPageDynamically(collection) {
 }
 
 displayCardsDynamically("hikes");  //input param is the name of the collection
->>>>>>> f85877248fb461e310e8cc3426531dbbb713524a
+
