@@ -81,11 +81,14 @@ function displayPageDynamically(collection) {
 
 
                 //update title and text and image
-                newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.card-length').innerHTML = hikeLength +"km";
-                newcard.querySelector('.card-text').innerHTML = details;
-                newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
-                newcard.querySelector('a').href = "eachHike.html?docID="+docID;
+                // newcard.querySelector('.card-title').innerHTML = title;
+                // newcard.querySelector('.card-length').innerHTML = hikeLength +"km";
+                // newcard.querySelector('.card-text').innerHTML = details;
+                // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
+                // newcard.querySelector('a').href = "eachHike.html?docID="+docID;
+
+
+                newpage.querySelector('.event-description').innerHTML = details;
 
                 //Optional: give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
@@ -100,5 +103,5 @@ function displayPageDynamically(collection) {
         })
 }
 
-displayCardsDynamically("hikes");  //input param is the name of the collection
+displayPageDynamically("events");  //input param is the name of the collection=
 
