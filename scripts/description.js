@@ -12,17 +12,31 @@ function addBookmark(){
 
     var bookmarksRef = db.collection("users").doc("J2A4IddxuURAJsYt0cEn3Kc5Nx73").collection("bookmarks"); //user collection should not be hardcoded
     var eventsRef = db.collection("events");
-    var eventID = "CKMMGiUDrJKDjigW8aHP"
+    var eventID = "CKMMGiUDrJKDjigW8aHP" // should not be hardcoded
 
     if (icon == "material-symbols-outlined"){
-        eventsRef.doc(eventID) // should not be hardcoded
+        eventsRef.doc(eventID) 
     .get()
     .then(doc => {
-        thisEvent = doc.data();
-        bookmarksRef.add(thisEvent);
+        eventInfo = doc.data();
+        bookmarksRef.add({
+            eventInfo,
+            eventID: eventID
+        });
+
     });
     } else {
-        console.log("nope");
+        bookmarksRef.get("bookmarks")
+            .then(allBookmarks => {
+                allBookmarks.forEach(doc => {
+                    var eventBookmarked = doc.data().eventID;
+                    var bookmarkID = doc.id;
+                    
+                    if (eventBookmarked == eventID){
+                        bookmarksRef.doc(bookmarkID).delete();
+                    }
+                })
+            })
     }
     //define a variable for the collection you want to create in Firestore to populate data
    
