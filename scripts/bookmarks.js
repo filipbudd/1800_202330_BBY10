@@ -1,5 +1,7 @@
 function deleteBookmark(id){
-    var bookmarksRef = db.collection("users").doc("J2A4IddxuURAJsYt0cEn3Kc5Nx73").collection("bookmarks"); //user collection should not be hardcoded
+    var bookmarksRef = db.collection("users")
+        .doc("J2A4IddxuURAJsYt0cEn3Kc5Nx73")
+        .collection("bookmarks"); //user collection should not be hardcoded
     var bookmarkID = id
 
     bookmarksRef.doc(bookmarkID).delete();
