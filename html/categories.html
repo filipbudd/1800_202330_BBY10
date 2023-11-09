@@ -1,314 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>Categories</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <!-- Bootstrap Library CSS CDN go here -->
-  <!-- Boostrap Library JS CDN  go here -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-
-  <!--Fonts from Google-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Changa&family=Sometype+Mono&display=swap" rel="stylesheet">
-
-  <!-- Google Icons (Material Design)-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="/styles/style.css" />
-</head>
-
-<body>
-  <nav id="navPlaceholder"></nav>
-  <!--breadcrumb-->
-  <pre>
-   </pre>
-
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
-      <li class="breadcrumb-item"><a href="categories.html">Categories</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Sports</li>
-    </ol>
-  </nav>
-  <!--Sort By-->
-  <div class="d-inline form-group px-2 col">
-    <span>Sort By:</span>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Rating</option>
-      <option value="1">Cost</option>
-      <option value="2">Date</option>
-    </select>
-  </div>
-  <!--Search Filter-->
-  <button class="d-inline btn dropdown-toggler m-2" type="button" id="dropdownFilterButton" data-target="#filterMenu"
-    data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-    Filter
-  </button>
-
-  <div id="filterMenu" class="collapse mx-auto p-3">
-    <form class="px-5 py-5">
-      <div class="form-group">
-        <label for="filterLocation">Location </label>
-        <input type="text" class="form-control" id="filterLocation" placeholder="City">
-      </div>
-      <div class="form-row align-items-center">
-        <div class="form-group col-auto pt-3">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Ages</option>
-            <option value="1">2 and under</option>
-            <option value="2">3-5</option>
-            <option value="3">6-12</option>
-            <option value="3">13-18</option>
-            <option value="3">19+</option>
-          </select>
-        </div>
-
-        <div class="form-group col-auto pt-3">
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Time of Day</option>
-            <option value="1">Morning</option>
-            <option value="2">Afternoon</option>
-            <option value="3">Evening</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="col-auto">
-          <div>Ratings: </div>
-          <div class="form-group pb-3">
-            <div class="form-check pr-5">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueOutCheck">
-              <label class="form-check-label" for="dropdownVenueOutCheck">
-                <span class="material-icons" id="star1">star</span>
-                <span class="material-icons" id="star2">star</span>
-                <span class="material-icons" id="star3">star</span>
-                <span class="material-icons" id="star3">star</span>
-                <span class="material-icons" id="star3">star</span>
-              </label>
-            </div>
-            <div class="form-check pr-5">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueInPersonCheck">
-              <label class="form-check-label" for="dropdownVenueInPersonCheck">
-                <span class="material-icons" id="star1">star</span>
-                <span class="material-icons" id="star2">star</span>
-                <span class="material-icons" id="star3">star</span>
-                <span class="material-icons" id="star3">star</span>
-                <span class="material-icons" id="star4">star_outline</span>
-              </label>
-            </div>
-            <div class="form-check pr-5">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
-              <label class="form-check-label" for="dropdownVenueOnlineCheck">
-                <span class="material-icons" id="star1">star</span>
-                <span class="material-icons" id="star2">star</span>
-                <span class="material-icons" id="star4">star_outline</span>
-                <span class="material-icons" id="star4">star_outline</span>
-                <span class="material-icons" id="star4">star_outline</span>
-              </label>
-            </div>
-            <div class="form-check pr-5">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
-              <label class="form-check-label" for="dropdownVenueOnlineCheck">
-                <span class="material-icons" id="star1">star</span>
-                <span class="material-icons" id="star4">star_outline</span>
-                <span class="material-icons" id="star4">star_outline</span>
-                <span class="material-icons" id="star4">star_outline</span>
-                <span class="material-icons" id="star4">star_outline</span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-auto">
-          <div>Venue: </div>
-          <div class="form-group col-auto pb-3">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueOutCheck">
-              <label class="form-check-label" for="dropdownVenueOutCheck">
-                Outdoor
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueInPersonCheck">
-              <label class="form-check-label" for="dropdownVenueInPersonCheck">
-                Indoor (In-person)
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
-              <label class="form-check-label" for="dropdownVenueOnlineCheck">
-                Indoor (Online)
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-auto">
-          <div>Season: </div>
-          <div class="form-group col-auto pb-3">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueOutCheck">
-              <label class="form-check-label" for="dropdownVenueOutCheck">
-                January-April
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueInPersonCheck">
-              <label class="form-check-label" for="dropdownVenueInPersonCheck">
-                May-August
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
-              <label class="form-check-label" for="dropdownVenueOnlineCheck">
-                September-December
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <input class="btn btn-primary" type="submit" value="Apply"></button>
-    </form>
-  </div>
-
-  <!--card-->
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-primary">Sports</strong>
-          <h3 class="mb-0">
-            <a class="text-dark" href="event.html">Adam's Birthday</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov 3</div>
-          <p class="card-text mb-auto">Filip's brother's birthday party! Come visit this epic gamer on his special day.
-          </p>
-          <a href="event.html">Learn more</a>
-        </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-          alt="Card image cap">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-success">Sports</strong>
-          <h3 class="mb-0">
-            <a class="text-dark" href="event.html">Whisler Blackcomb</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort.
-          </p>
-          <a href="#">Learn more</a>
-        </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-          alt="Card image cap">
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <hr />
-
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-primary">Sports</strong>
-          <h3 class="mb-0">
-            <a class="text-dark" href="event.html">Whisler Blackcomb</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort.
-          </p>
-          <a href="#">Learn more</a>
-        </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-          alt="Card image cap">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-success">Sports</strong>
-          <h3 class="mb-0">
-            <a class="text-dark" href="event.html">Whisler Blackcomb</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort.
-          </p>
-          <a href="#">Learn more</a>
-        </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-          alt="Card image cap">
-      </div>
-    </div>
-  </div>
-  </div>
-  <hr />
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-primary">Sports</strong>
-          <h3 class="mb-0">
-            <a class="text-dark" href="event.html">Whisler Blackcomb</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort.
-          </p>
-          <a href="#">Learn more</a>
-        </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-          alt="Card image cap">
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card flex-md-row mb-4 box-shadow h-md-250">
-        <div class="card-body d-flex flex-column align-items-start">
-          <strong class="d-inline-block mb-2 text-success">Sports</strong>
-          <h3 class="mb-0">
-            <a class="text-dark" href="event.html">Whisler Blackcomb</a>
-          </h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort.
-          </p>
-          <a href="#">Learn more</a>
-        </div>
-        <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb"
-          alt="Card image cap">
-      </div>
-    </div>
-  </div>
-  </div>
-  <!--pagination-->
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav>
-
-  <footer id="footerPlaceholder"></footer>
-
-
-  <script src="/scripts/skeleton.js"></script>
-  <script src="/scripts/script.js"></script>
-</body>
-
+	<head>
+        <!-- NOTE FROM FILIP: -->
+        <!-- There are many stray end tags for buttons, but I can't see why. Perhaps I will revisit this script at a later date. -->
+		<title>Categories</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Bootstrap Library CSS CDN go here -->
+		<!-- Boostrap Library JS CDN  go here -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<!--Fonts from Google-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Changa&family=Sometype+Mono&display=swap" rel="stylesheet">
+		<!-- Google Icons (Material Design)-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<!-- Link to styles of your own -->
+		<link rel="stylesheet" href="/styles/style.css" />
+	</head>
+	<body>
+		<nav id="navPlaceholder"></nav>
+		<!--breadcrumb-->
+		<pre></pre>
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="/index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="categories.html">Categories</a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">Sports</li>
+			</ol>
+		</nav>
+		<!--Sort By-->
+		<div class="d-inline form-group px-2 col">
+			<span>Sort By:</span>
+			<select class="form-select" aria-label="Default select example">
+				<option selected>Rating</option>
+				<option value="1">Cost</option>
+				<option value="2">Date</option>
+			</select>
+		</div>
+		<!--Search Filter-->
+		<button class="d-inline btn dropdown-toggler m-2" type="button" id="dropdownFilterButton" data-target="#filterMenu" data-toggle="collapse" aria-haspopup="true" aria-expanded="false"> Filter </button>
+		<div id="filterMenu" class="collapse mx-auto p-3">
+			<form class="px-5 py-5">
+				<div class="form-group">
+					<label for="filterLocation">Location </label>
+					<input type="text" class="form-control" id="filterLocation" placeholder="City">
+				</div>
+				<div class="form-row align-items-center">
+					<div class="form-group col-auto pt-3">
+						<select class="form-select" aria-label="Default select example">
+							<option selected>Ages</option>
+							<option value="1">2 and under</option>
+							<option value="2">3-5</option>
+							<option value="3">6-12</option>
+							<option value="3">13-18</option>
+							<option value="3">19+</option>
+						</select>
+					</div>
+					<div class="form-group col-auto pt-3">
+						<select class="form-select" aria-label="Default select example">
+							<option selected>Time of Day</option>
+							<option value="1">Morning</option>
+							<option value="2">Afternoon</option>
+							<option value="3">Evening</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-auto">
+						<div>Ratings: </div>
+						<div class="form-group pb-3">
+							<div class="form-check pr-5">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueOutCheck">
+								<label class="form-check-label" for="dropdownVenueOutCheck">
+									<span class="material-icons" id="star1">star</span>
+									<span class="material-icons" id="star2">star</span>
+									<span class="material-icons" id="star3">star</span>
+									<span class="material-icons" id="star3">star</span>
+									<span class="material-icons" id="star3">star</span>
+								</label>
+							</div>
+							<div class="form-check pr-5">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueInPersonCheck">
+								<label class="form-check-label" for="dropdownVenueInPersonCheck">
+									<span class="material-icons" id="star1">star</span>
+									<span class="material-icons" id="star2">star</span>
+									<span class="material-icons" id="star3">star</span>
+									<span class="material-icons" id="star3">star</span>
+									<span class="material-icons" id="star4">star_outline</span>
+								</label>
+							</div>
+							<div class="form-check pr-5">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
+								<label class="form-check-label" for="dropdownVenueOnlineCheck">
+									<span class="material-icons" id="star1">star</span>
+									<span class="material-icons" id="star2">star</span>
+									<span class="material-icons" id="star4">star_outline</span>
+									<span class="material-icons" id="star4">star_outline</span>
+									<span class="material-icons" id="star4">star_outline</span>
+								</label>
+							</div>
+							<div class="form-check pr-5">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
+								<label class="form-check-label" for="dropdownVenueOnlineCheck">
+									<span class="material-icons" id="star1">star</span>
+									<span class="material-icons" id="star4">star_outline</span>
+									<span class="material-icons" id="star4">star_outline</span>
+									<span class="material-icons" id="star4">star_outline</span>
+									<span class="material-icons" id="star4">star_outline</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-auto">
+						<div>Venue: </div>
+						<div class="form-group col-auto pb-3">
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueOutCheck">
+								<label class="form-check-label" for="dropdownVenueOutCheck"> Outdoor </label>
+							</div>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueInPersonCheck">
+								<label class="form-check-label" for="dropdownVenueInPersonCheck"> Indoor (In-person) </label>
+							</div>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
+								<label class="form-check-label" for="dropdownVenueOnlineCheck"> Indoor (Online) </label>
+							</div>
+						</div>
+					</div>
+					<div class="col-auto">
+						<div>Season: </div>
+						<div class="form-group col-auto pb-3">
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueOutCheck">
+								<label class="form-check-label" for="dropdownVenueOutCheck"> January-April </label>
+							</div>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueInPersonCheck">
+								<label class="form-check-label" for="dropdownVenueInPersonCheck"> May-August </label>
+							</div>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="dropdownVenueOnlineCheck">
+								<label class="form-check-label" for="dropdownVenueOnlineCheck"> September-December </label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<input class="btn btn-primary" type="submit" value="Apply">
+			</form>
+		</div>
+		<!--card-->
+		<div class="row mb-2">
+			<div class="col-md-6">
+				<div class="card flex-md-row mb-4 box-shadow h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-primary">Sports</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="event.html">Adam's Birthday</a>
+						</h3>
+						<div class="mb-1 text-muted">Nov 3</div>
+						<p class="card-text mb-auto">Filip's brother's birthday party! Come visit this epic gamer on his special day. </p>
+						<a href="event.html">Learn more</a>
+					</div>
+					<img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card flex-md-row mb-4 box-shadow h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-success">Sports</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="event.html">Whisler Blackcomb</a>
+						</h3>
+						<div class="mb-1 text-muted">Nov 11</div>
+						<p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort. </p>
+						<a href="#">Learn more</a>
+					</div>
+					<img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+				</div>
+			</div>
+		</div>
+		</div>
+		<hr />
+		<div class="row mb-2">
+			<div class="col-md-6">
+				<div class="card flex-md-row mb-4 box-shadow h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-primary">Sports</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="event.html">Whisler Blackcomb</a>
+						</h3>
+						<div class="mb-1 text-muted">Nov 12</div>
+						<p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort. </p>
+						<a href="#">Learn more</a>
+					</div>
+					<img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card flex-md-row mb-4 box-shadow h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-success">Sports</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="event.html">Whisler Blackcomb</a>
+						</h3>
+						<div class="mb-1 text-muted">Nov 11</div>
+						<p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort. </p>
+						<a href="#">Learn more</a>
+					</div>
+					<img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+				</div>
+			</div>
+		</div>
+		</div>
+		<hr />
+		<div class="row mb-2">
+			<div class="col-md-6">
+				<div class="card flex-md-row mb-4 box-shadow h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-primary">Sports</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="event.html">Whisler Blackcomb</a>
+						</h3>
+						<div class="mb-1 text-muted">Nov 12</div>
+						<p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort. </p>
+						<a href="#">Learn more</a>
+					</div>
+					<img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card flex-md-row mb-4 box-shadow h-md-250">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="d-inline-block mb-2 text-success">Sports</strong>
+						<h3 class="mb-0">
+							<a class="text-dark" href="event.html">Whisler Blackcomb</a>
+						</h3>
+						<div class="mb-1 text-muted">Nov 11</div>
+						<p class="card-text mb-auto">Come check out why Whistler Blackcomb was named North America's best ski resort. </p>
+						<a href="#">Learn more</a>
+					</div>
+					<img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+				</div>
+			</div>
+		</div>
+		</div>
+		<!--pagination-->
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item">
+					<a class="page-link" href="#">Previous</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">1</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">2</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">3</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">Next</a>
+				</li>
+			</ul>
+		</nav>
+		<footer id="footerPlaceholder"></footer>
+		<script src="/scripts/skeleton.js"></script>
+		<script src="/scripts/script.js"></script>
+	</body>
 </html>
