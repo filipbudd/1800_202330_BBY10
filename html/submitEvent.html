@@ -50,50 +50,112 @@
 
   <h3>Event Submission Form</h3>
 
-  <form class="card">
-    <div class="form-group">
-      <!--multi-select category-->
+    <form>
+      <fieldset class="mb-3" id="submission-form">
+      <div class="form-group row">
+        <!--multi-select category-->
+        <label for="category-select" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-5">
+        <select class="form-control" id="category-select" required>
+          <option value=""></option>
+          <option value="volunteering">Volunteering</option>
+          <option value="sports">Sports</option>
+          <option value="educational">Educational</option>
+          <option value="festival">Festival</option>
+          <option value="art_and_craft">Art and Craft</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <!--select if its multi day or single day-->
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Duration</legend>
+          <div class="col-sm-5">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="multi-day" value="option1" onclick="addDurationField()">
+              <label class="form-check-label" for="multi-day">
+                Multi days
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="single-day" value="option2" onclick="addDateField()">
+              <label class="form-check-label" for="single-day">
+                Single day
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div id="multi-day-selected"><!--only appear if multi day: start day and end day-->
+       </div>
     </div>
 
-    <div class="form-group">
-      <!--select if its multi day or single day-->
+      <div class="form-group">
+        <!--only appear if single day: date-->
+        <div id="single-day-selected"></div>
+      </div>
+
+      <div class="form-group row">
+        <!--description-->
+        <label for="description" class="col-form-label col-sm-2 pt-0">Description</label>
+        <div class="col-sm-5">
+        <textarea class="form-control" id="description" rows="3"></textarea>
+      </div>
     </div>
 
-    <div class="form-group">
-      <!--only appear if multi day: start day and end day-->
+      <div class="form-group row">
+        <label for="inputHost" class="col-sm-2 col-form-label">Host</label>
+        <div class="col-sm-5">
+        <input type="text" class="form-control" id="inputHost" >
+      </div>
     </div>
 
-    <div class="form-group">
-      <!--only appear if single day: date-->
+      <!---this is a placeholder because this is too much for me-->
+      <div class="form-group row">
+        <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
+        <div class="col-sm-5">
+        <input type="text" class="form-control" id="inputLocation" >
+      </div>
     </div>
 
-    <div class="form-group">
-      <!--description-->
-    </div>
+      <div class="form-group row">
+        <!--Name of event-->
+        <label for="eventName" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-5">
+        <input type="text" class="form-control" id="eventName" >
+      </div>
+      </div>
 
-    <div class="form-group">
-      <!--host-->
-    </div>
+      <div class="form-group row">
+        <!--Prices options-->
+        <label for="cost" class="col-sm-2 col-form-label">Cost</label>
+        <div class="col-sm-5">
+        <input type="text" class="form-control" id="cost" >
+      </div>
+      </div>
 
-    <!---this is a placeholder because this is too much for me-->
-    <div class="form-group">
-      <!--location-->
-    </div>
+      <div class="form-group row">
+        <!--Availibliity dropdown (available, sold out, not yet available)-->
+        <label for="availibliity-select" class="col-sm-2 col-form-label">Availibliity</label>
+        <div class="col-sm-5">
+        <select class="form-control" id="availibliity-select" required>
+          <option value=""></option>
+          <option value="1">Available</option>
+          <option value="2">Sold out</option>
+          <option value="3">Not yet available</option>
+        </select>
+      </div>
 
-    <div class="form-group">
-      <!--Name of event-->
-    </div>
-
-    <div class="form-group">
-      <!--Prices options-->
-    </div>
-
-    <div class="form-group">
-      <!--Availibliity dropdown (available, sold out, not yet available)-->
-    </div>
-    <input class="btn btn-primary" type="submit" value="Submit">
-  </form>
-
+      
+      </div>
+    </fieldset>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+    
 
   <footer id="footerPlaceholder"></footer> <!--USE THIS FOR THE FOOTER IT WILL AUTO INSERT-->
 
@@ -105,15 +167,54 @@
   
   -->
 
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <!---------------------------------------------->
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script>
+      const duration = document.getElementById("multi-day-selected");
+      const singleDay = document.getElementById("single-day-selected");
 
-  <!-- Link to scripts of your own -->
-  <!-- <script src="./scripts/script.js"></script> -->
-  <script src="/scripts/firebaseAPI_TEAM10.js"></script>
-  <script src="/scripts/skeleton.js"></script>
-  <script src="/scripts/script.js"></script>
-</body>
+      function addDurationField() {
+        singleDay.innerHTML = "";
+        duration.innerHTML = "";
+        const createLableStart = document.createElement("Lable");
+        createLableStart.textContent = "Start from:   ";
+        const dateFieldStart = document.createElement("input");
+        dateFieldStart.setAttribute("type", "date");
+        dateFieldStart.setAttribute("name", "date");
+        dateFieldStart.setAttribute("required", "");
 
+        const createLableEnd = document.createElement("Lable");
+        createLableEnd.textContent = "   to:";
+        const dateFieldEnd = document.createElement("input");
+        dateFieldEnd.setAttribute("type", "date");
+        dateFieldEnd.setAttribute("name", "date");
+        dateFieldEnd.setAttribute("required", "");
+        duration.appendChild(createLableStart);
+        duration.appendChild(dateFieldStart);
+        duration.appendChild(createLableEnd);
+        duration.appendChild(dateFieldEnd);
+
+      }
+
+      function addDateField() {
+        singleDay.innerHTML = "";
+        duration.innerHTML = "";
+        const dateField = document.createElement("input");
+        dateField.setAttribute("type", "date");
+        dateField.setAttribute("name", "date");
+        dateField.setAttribute("required", "");
+        singleDay.appendChild(dateField);
+        
+      }
+
+    </script>
+
+    <!-- Link to scripts of your own -->
+    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="/scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/submitEvent.js"></script>
+  </body>
 </html>
