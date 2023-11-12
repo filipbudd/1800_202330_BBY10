@@ -26,7 +26,7 @@ var attendedEventsCollectionRef = userDocRef.collection("attendedEvents");
 }
 
 function addSubDocument(data) {
-  var userDocRef = db.collection("users").doc("J2A4IddxuURAJsYt0cEn3Kc5Nx73");
+  var userDocRef = db.collection("users").doc(user.uid);
   var attendedEventsCollectionRef = userDocRef.collection("attendedEvents");
   var attendedEventsDocRef = attendedEventsCollectionRef.doc(); // let Firestore generate the ID
 

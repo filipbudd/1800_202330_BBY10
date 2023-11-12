@@ -1,6 +1,3 @@
-// Get the current user
-var user = firebase.auth().currentUser;
-
 // Listen for authentication state changes
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
