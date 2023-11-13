@@ -55,7 +55,8 @@
       <li class="breadcrumb-item active" aria-current="page">Description</li>
     </ol>
   </nav>
-  <img src="/images/skii.jpg" class="img-fluid" style="width: 100%" alt="Responsive image" />
+  <img src="" id="bannerImg" class="img-fluid" style="width: 100%" alt="Responsive image" />  <!--DYNAMIC THINGS NEED TO BE ADDED-->
+  <!-- /images/skii.jpg -->
 
   <!--notification-->
   <div class="row">
@@ -93,7 +94,7 @@
           <h2 class="mb-0">
             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
               aria-expanded="true" aria-controls="collapseOne">
-              About <span id="event-title"></span>
+              About <span id="event-name"></span>
             </button>
           </h2>
         </div>
@@ -101,20 +102,28 @@
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class="card-body">
 
-            <p id="event-description"></p>
+            <p id="description"></p>
             
             <dl>
-              <dt>Cost: <span id="price-status"></span></dt>
-              <dd id="event-cost"></dd>
-
+              <dt>Category: <span id="category"></span></dt>
+              <br>
+              <dt>Cost: <span id="cost"></span></dt>
+              <br>
               <dt>Event Availability:</dt>
-              <dd><span id="event-date"></span></dd>
+              <dd><span id="date"></span></dd>
 
               <dt>Address:</dt>
-              <dd><span id="event-address"></span></dd>
+              <dd><span id="address"></span></dd>
 
               <dt>Host:</dt>
-              <dd><span id="event-host"></span></dd>
+              <dd><span id="host"></span></dd>
+
+              <dt>Age Range:</dt>
+              <dd><span id="ages"></span></dd>
+              <br>
+
+              <dt>Website<dt>
+              <a id="link">Link to our website</a>
 
             </dl>
           </div>
@@ -185,9 +194,10 @@
   <footer id="footerPlaceholder"></footer>
 
   <script src="/scripts/firebaseAPI_TEAM10.js"></script>
-  <script src="/scripts/description.js"></script>
   <script src="/scripts/skeleton.js"></script>
   <script src="/scripts/script.js"></script>
+  <script src="/scripts/event.js"></script>
+  <script src="/scripts/eachEvent.js"></script>
 
 </body>
 
