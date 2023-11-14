@@ -4,6 +4,7 @@ var user = firebase.auth().currentUser;
 // Listen for authentication state changes
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
+        localStorage.setItem("user", user.uid);
         // User is signed in; you can access their name
         var name = user.displayName;
 
