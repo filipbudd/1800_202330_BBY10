@@ -27,11 +27,25 @@ function saveSubmitInfo() {
         latitude,
         longitude,
     }
+    
     currentUser.collection('submitEvent').add(submitData)
       .then((docRef) => {
     console.log('submitEvent added with ID: ', docRef.id);
     })
       .catch((error) => {
     console.error('error adding submitEvent')
+    })
+
+    //different from previous submit data due to there being a difference 
+    //in the set up fo the two collections and we need to discuss that
+    var submitEventData = {
+        category: submitCategory,
+        cost: submitCost,
+        date:submitSingleDay,
+        description: submitDescription,
+        host: submitHost,
+    }
+    db.collection("events").add(submitEventData).then((docRef) => {
+      console.log('submitEvent added to events collection ID: ', docRef.id);
     })
 }
