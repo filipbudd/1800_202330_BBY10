@@ -12,6 +12,8 @@ function saveSubmitInfo() {
     let submitLocation = document.getElementById("inputLocation").value;
     let submitTitle = document.getElementById("eventName").value;
     let submitCost = document.getElementById("cost").value;
+    let latitude = document.getElementById("latitude").value;
+    let longitude = document.getElementById("longitude").value;
 
     const submitData = {
         category: submitCategory,
@@ -21,7 +23,9 @@ function saveSubmitInfo() {
         host: submitHost,
         location: submitLocation,
         title: submitTitle,
-        cost: submitCost
+        cost: submitCost,
+        latitude,
+        longitude,
     }
     currentUser.collection('submitEvent').add(submitData)
       .then((docRef) => {
