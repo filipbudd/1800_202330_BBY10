@@ -13,9 +13,10 @@ function displayEventPageDynamically(collection) {
       allEvents.forEach(doc => {
 
         //These are grabbed from the DB to be used in the card
-        var shortDesc = doc.data().shortDesc;
+        var description = doc.data().description;
         var category = doc.data().category;
         var name = doc.data().name;
+        var date =doc.data().date;
 
         //THIS ONE IS DIRECTLY RELATED TO THE IMAGE DO NOT CHANGE THE IMAGE NAME
         var image = doc.data().image;
@@ -27,11 +28,13 @@ function displayEventPageDynamically(collection) {
         var docID = doc.id;
 
         //This one writes the auto generated id into the URL as a query
-        newcard.querySelector('a').href = "eachEvent.html?docID=" + doc.id;
+        newcard.querySelector('.card-title').href = "eachEvent.html?docID=" + doc.id;
+        newcard.querySelector('.btn').href = "eachEvent.html?docID=" + doc.id;
 
         //These add dynamic words to the card
         newcard.querySelector('.card-title').innerHTML = name;
-        newcard.querySelector('.card-text').innerHTML = shortDesc;
+        newcard.querySelector('.card-date').innerHTML = date;
+        newcard.querySelector('.card-text').innerHTML = description;
         newcard.querySelector('.card-category').innerHTML = category;
 
         //These 2 lines handle the image and its route formatting
