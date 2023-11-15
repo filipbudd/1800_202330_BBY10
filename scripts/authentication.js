@@ -22,7 +22,8 @@ var uiConfig = {
           email: user.email,                         //with authenticated user's ID (user.uid)
           city: "Burnaby",                      //optional default profile info      
           address: "5566 Patterson Ave",
-          bookmarks:[]//optional default profile info
+          bookmarks:[],//optional default profile info
+          bio: "This is default text just waiting to be customized!" // This is the default description
         }).then(function () {
           console.log("New user added to firestore");
           window.location.assign("account.html");       //re-direct to account.html after signup
