@@ -11,17 +11,29 @@ firebase.auth().onAuthStateChanged(function(user) {
         userDocRef.get().then(function(doc) {
             if (doc.exists) {
                 // User document exists; you can access its data
-                var name = user.displayName;;
+                var name = doc.data().name;
                 var userBio = doc.data().bio;
                 var picUrl = doc.data().profilePic;
 
                 // Display the user's name on the webpage
                 document.getElementById('user-name').textContent = name;
+                    
+                var nameElement = document.getElementById('user-name'); // Assuming the id is 'bioInput'
+                nameElement.style.wordWrap = 'break-word';
+                nameElement.style.maxWidth = '1000px';
                 
                 // Display the user's name on the webpage
-                //if(userBio != null) {
+                if(userBio != "") {
                     document.getElementById('user-bio').textContent = userBio;
-                //}
+                    // Apply word-wrap and set max-width to the bio element
+                    
+                    var bioElement = document.getElementById('user-bio'); // Assuming the id is 'bioInput'
+                    bioElement.style.wordWrap = 'break-word';
+                    bioElement.style.maxWidth = '400px';
+                }
+                else {
+                    document.getElementById('user-bio').textContent = "This is a chance for you to share your story, interesting human!.";
+                }
                 
                 // Display the user's profile picture on the webpage
                 $("#mypic-goes-here").attr("src", picUrl);
