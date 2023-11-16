@@ -22,6 +22,7 @@
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
         
 		<!--Fonts from Google-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +52,8 @@
 			</div>
             
             <!-- Profile Pic -->
-			<img src="/images/profilePic.png" class="mx-auto d-block" name="Profile Picture" id="account-pic">
+			<img src="/images/profilePic.png" class="mx-auto d-block" name="Profile Picture" id="mypic-goes-here">
+
             
             <div class="container-fluid">
                 <div class="row">
@@ -77,7 +79,7 @@
 					<span id="user-name"></span>
 					<span id="name-goes-here"></span>
 				</h3>
-				<div id="Description" class="h-50">DESCRIPTION DESCRIPTION</div>
+                <div id="Description" class="h-50"><span id="user-bio">This is a chance for you to share your story, interesting human!</span></div>
 			</div>
 			<br>
             

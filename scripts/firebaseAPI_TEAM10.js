@@ -1,6 +1,7 @@
 
   // https://firebase.google.com/docs/web/setup#available-libraries
   //import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+
   // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyADEMmN3UaQEu13pKp73zNaXWPYjob_hxk",
@@ -17,6 +18,7 @@
   console.log("FIREBASE INITIALIZED")
 
 
+  var storage = firebase.storage();
 
 
 
