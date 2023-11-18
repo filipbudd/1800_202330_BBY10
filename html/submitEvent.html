@@ -1,211 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Welcome to NearbyNexus</title>
-    <meta name="comp1800 template" content="My 1800 App" />
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>Welcome to NearbyNexus</title>
+  <meta name="comp1800 template" content="My 1800 App" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Bootstrap Library CSS CDN go here -->
-    <!-- Boostrap Library JS CDN  go here -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-- Other libraries go here -->
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+  <!-- Bootstrap Library CSS CDN go here -->
+  <!-- Boostrap Library JS CDN  go here -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
-    
+  <!-- Other libraries go here -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
 
-    <!--Fonts from Google-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Changa&family=Sometype+Mono&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="/styles/style.css" />
-  </head>
-
-  <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-
-    <nav id="navPlaceholder"></nav>
-    <!--USE THIS FOR THE HEADER IT WILL AUTO INSERT-->
+  <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 
 
-    <div class="container">
-      <form class="offset-md-2">
-        <h3>Event Submission Form</h3>
-        <fieldset class="mb-3" id="submission-form">
-          <div class="form-group row">
-            <!--multi-select category-->
-            <label for="category-select" class="col-sm-2 col-form-label"
-              >Category</label
-            >
-            <div class="col-sm-6">
-              <select class="form-control" id="category-select" required>
-                <option value=""></option>
-                <option value="volunteering">Volunteering</option>
-                <option value="sports">Sports</option>
-                <option value="educational">Educational</option>
-                <option value="festival">Festival</option>
-                <option value="art_and_craft">Art and Craft</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+  <!--Fonts from Google-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Changa&family=Sometype+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="/styles/style.css" />
+</head>
+
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+
+  <nav id="navPlaceholder"></nav>
+  <!--USE THIS FOR THE HEADER IT WILL AUTO INSERT-->
+
+
+  <div class="container">
+    <form class="justify-content-center">
+      <h3>Event Submission Form</h3>
+      <fieldset class="col mb-5" id="submission-form">
+        <div class="form-group row">
+          <!--multi-select category-->
+          <label for="category-select" class="col-sm-3 col-form-label">Category</label>
+          <div class="col-sm-12 col-lg-10">
+            <select class="form-control" id="category-select" required>
+              <option value=""></option>
+              <option value="volunteering">Volunteering</option>
+              <option value="sports">Sports</option>
+              <option value="educational">Educational</option>
+              <option value="festival">Festival</option>
+              <option value="art_and_craft">Art and Craft</option>
+              <option value="other">Other</option>
+            </select>
           </div>
+        </div>
 
-          <div class="form-group">
-            <!--select if its multi day or single day-->
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Duration</legend>
-              <div class="col-sm-6">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="gridRadios"
-                    id="multi-day"
-                    value="option1"
-                    onclick="addDurationField()"
-                  />
-                  <label class="form-check-label" for="multi-day">
-                    Multi days
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="gridRadios"
-                    id="single-day"
-                    value="option2"
-                    onclick="addDateField()"
-                  />
-                  <label class="form-check-label" for="single-day">
-                    Single day
-                  </label>
-                </div>
+        <div class="form-group row">
+          <!--Name of event-->
+          <label for="eventName" class="col-sm-3 col-form-label">Title</label>
+          <div class="col-sm-12 col-lg-10">
+            <input type="text" class="form-control" id="eventName" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <!--multi-select category-->
+          <label for="category-select" class="col-sm-3 col-form-label">For Ages</label>
+          <div class="col-sm-12 col-lg-10">
+            <select class="form-control" id="age-select" required>
+              <option value=""></option>
+              <option value="volunteering">2 and under</option>
+              <option value="sports">3-5</option>
+              <option value="educational">6-12</option>
+              <option value="festival">13-18</option>
+              <option value="art_and_craft">19+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <!--select if its multi day or single day-->
+          <div class="row">
+            <legend class="col-form-label col-sm-3 pt-0">Duration</legend>
+            <div class="col-sm-12 col-lg-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="multi-day" value="option1"
+                  onclick="addDurationField()" />
+                <label class="form-check-label" for="multi-day">
+                  Multi days
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="single-day" value="option2"
+                  onclick="addDateField()" />
+                <label class="form-check-label" for="single-day">
+                  Single day
+                </label>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <div id="multi-day-selected">
-              <!--only appear if multi day: start day and end day-->
-            </div>
+        <div class="form-group">
+          <div id="multi-day-selected">
+            <!--only appear if multi day: start day and end day-->
           </div>
+        </div>
 
-          <div class="form-group">
-            <!--only appear if single day: date-->
-            <div id="single-day-selected"></div>
+        <div class="form-group">
+          <!--only appear if single day: date-->
+          <div id="single-day-selected"></div>
+        </div>
+
+        <div class="form-group row">
+          <!--description-->
+          <label for="description" class="col-form-label col-sm-3">Description</label>
+          <div class="col-sm-12 col-lg-10">
+            <textarea class="form-control" id="description" rows="3"></textarea>
           </div>
+        </div>
 
-          <div class="form-group row">
-            <!--description-->
-            <label for="description" class="col-form-label col-sm-2 pt-0"
-              >Description</label
-            >
-            <div class="col-sm-6">
-              <textarea
-                class="form-control"
-                id="description"
-                rows="3"
-              ></textarea>
-            </div>
+        <div class="form-group row">
+          <label for="inputHost" class="col-sm-3 col-form-label">Host</label>
+          <div class="col-sm-12 col-lg-10">
+            <input type="text" class="form-control" id="inputHost" />
           </div>
+        </div>
 
-          <div class="form-group row">
-            <label for="inputHost" class="col-sm-2 col-form-label">Host</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="inputHost" />
-            </div>
+        <!---this is a placeholder because this is too much for me-->
+        <div class="form-group row">
+          <label for="inputLocation" class="col-sm-3 col-form-label">Location</label>
+          <div class="col-sm-12 col-lg-10">
+            <input type="text" class="form-control" id="inputLocation" onchange="showMap()" />
           </div>
+        </div>
 
-          <!---this is a placeholder because this is too much for me-->
-          <div class="form-group row">
-            <label for="inputLocation" class="col-sm-2 col-form-label"
-              >Location</label
-            >
-            <div class="col-sm-6">
-              <input
-                type="text"
-                class="form-control"
-                id="inputLocation"
-                onchange="showMap()"
-              />
-            </div>
+
+
+        <div class="form-group row">
+          <!--Prices options-->
+          <label for="cost" class="col-sm-3 col-form-label">Cost</label>
+          <div class="col-sm-12 col-lg-10">
+            <input type="text" class="form-control" id="cost" />
           </div>
+        </div>
 
-          <div class="form-group row">
-            <!--Name of event-->
-            <label for="eventName" class="col-sm-2 col-form-label">Title</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="eventName" />
-            </div>
-          </div>
+        <div id="map" style="max-width: 740px; height: 400px"></div>
 
-          <div class="form-group row">
-            <!--Prices options-->
-            <label for="cost" class="col-sm-2 col-form-label">Cost</label>
-            <div class="col-sm-6">
-              <input type="text" class="form-control" id="cost" />
-            </div>
-          </div>
+        <input type="hidden" id="latitude" />
+        <input type="hidden" id="longitude" />
+        
+        <button class="btn btn-primary mt-4" type="submit" value="Submit" onclick="saveSubmitInfo()">Submit</button>
+      </fieldset>
 
-          <div id="map" style="width: 700px; height: 400px"></div>
+      
+    </form>
+  </div>
+  <footer id="footerPlaceholder"></footer>
+  <!--USE THIS FOR THE FOOTER IT WILL AUTO INSERT-->
 
-          <input type="hidden" id="latitude" />
-          <input type="hidden" id="longitude" />
-        </fieldset>
-
-        <input
-          class="btn btn-primary"
-          type="submit"
-          value="Submit"
-          onclick="saveSubmitInfo()"
-        />
-      </form>
-    </div>
-    <footer id="footerPlaceholder"></footer>
-    <!--USE THIS FOR THE FOOTER IT WILL AUTO INSERT-->
-
-    <!--
+  <!--
   
     Hey team, this is the template for the website. So delete this message after. You can move stuff here. I went through a lot of pain 
   and troubleshooting. Just know that you absolutely need to use live server to preview this, otherwise, you get a CORS error.
@@ -213,52 +185,20 @@
   
   -->
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script>
-      const duration = document.getElementById("multi-day-selected");
-      const singleDay = document.getElementById("single-day-selected");
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script>
 
-      function addDurationField() {
-        singleDay.innerHTML = "";
-        duration.innerHTML = "";
-        const createLableStart = document.createElement("Lable");
-        createLableStart.textContent = "Start from:   ";
-        const dateFieldStart = document.createElement("input");
-        dateFieldStart.setAttribute("type", "date");
-        dateFieldStart.setAttribute("name", "date");
-        dateFieldStart.setAttribute("required", "");
+  </script>
 
-        const createLableEnd = document.createElement("Lable");
-        createLableEnd.textContent = "   to:";
-        const dateFieldEnd = document.createElement("input");
-        dateFieldEnd.setAttribute("type", "date");
-        dateFieldEnd.setAttribute("name", "date");
-        dateFieldEnd.setAttribute("required", "");
-        duration.appendChild(createLableStart);
-        duration.appendChild(dateFieldStart);
-        duration.appendChild(createLableEnd);
-        duration.appendChild(dateFieldEnd);
-      }
+  <!-- Link to scripts of your own -->
+  <!-- <script src="./scripts/script.js"></script> -->
+  <script src="/scripts/firebaseAPI_TEAM10.js"></script>
+  <script src="/scripts/skeleton.js"></script>
+  <script src="/scripts/script.js"></script>
+  <script src="/scripts/submitEvent.js"></script>
+  <script src="/scripts/map.js"></script>
+</body>
 
-      function addDateField() {
-        singleDay.innerHTML = "";
-        duration.innerHTML = "";
-        const dateField = document.createElement("input");
-        dateField.setAttribute("type", "date");
-        dateField.setAttribute("name", "date");
-        dateField.setAttribute("required", "");
-        singleDay.appendChild(dateField);
-      }
-    </script>
-
-    <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
-    <script src="/scripts/firebaseAPI_TEAM10.js"></script>
-    <script src="/scripts/skeleton.js"></script>
-    <script src="/scripts/script.js"></script>
-    <script src="/scripts/submitEvent.js"></script>
-    <script src="/scripts/map.js"></script>
-  </body>
 </html>

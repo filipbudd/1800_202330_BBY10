@@ -1,8 +1,45 @@
+const duration = document.getElementById("multi-day-selected");
+const singleDay = document.getElementById("single-day-selected");
+
+function addDurationField() {
+  singleDay.innerHTML = "";
+  duration.innerHTML = "";
+  const createLableStart = document.createElement("Lable");
+  createLableStart.textContent = "Start from:   ";
+  const dateFieldStart = document.createElement("input");
+  dateFieldStart.setAttribute("type", "date");
+  dateFieldStart.setAttribute("name", "date");
+  dateFieldStart.setAttribute("required", "");
+
+  const createLableEnd = document.createElement("Lable");
+  createLableEnd.textContent = "   to:";
+  const dateFieldEnd = document.createElement("input");
+  dateFieldEnd.setAttribute("type", "date");
+  dateFieldEnd.setAttribute("name", "date");
+  dateFieldEnd.setAttribute("required", "");
+  duration.appendChild(createLableStart);
+  duration.appendChild(dateFieldStart);
+  duration.appendChild(createLableEnd);
+  duration.appendChild(dateFieldEnd);
+}
+
+function addDateField() {
+  singleDay.innerHTML = "";
+  duration.innerHTML = "";
+  const dateField = document.createElement("input");
+  dateField.setAttribute("type", "date");
+  dateField.setAttribute("name", "date");
+  dateField.setAttribute("required", "");
+  singleDay.appendChild(dateField);
+}
+
 function saveSubmitInfo() {
     const user = firebase.auth().currentUser;
     const currentUser = db.collection("users").doc(user.uid);
+    console.log("button works");
 //a) get user entered values
     let submitCategory = document.getElementById("category-select").value;
+    let submitAge = document.getElementById("age-select").value;
     let submitDuration = document.getElementById("multi-day-selected").value;
     submitDuration = submitDuration ? submitDuration: "";
     let submitSingleDay = document.getElementById("single-day-selected").value;
@@ -15,37 +52,34 @@ function saveSubmitInfo() {
     let latitude = document.getElementById("latitude").value;
     let longitude = document.getElementById("longitude").value;
 
+    if (submitDuration == ""){
+      let submitDate = submitDuration;
+    } else {
+      let submitDate = submitSingleDay;
+    }
+    
     const submitData = {
         category: submitCategory,
-        duration: submitDuration,
-        date: submitSingleDay,
+        ages: submitAge,
+        date: submitDate,
         description: submitDescription,
         host: submitHost,
-        location: submitLocation,
-        title: submitTitle,
+        address: submitLocation,
+        name: submitTitle,
         cost: submitCost,
         latitude,
         longitude,
     }
     
-    currentUser.collection('submitEvent').add(submitData)
-      .then((docRef) => {
-    console.log('submitEvent added with ID: ', docRef.id);
+    db.collection("events").add(submitData).then((docRef) => {
+      console.log('submitEvent added to events collection ID: ', docRef.id);
+      currentUser.update({
+        submittedEvents: firebase.firestore.FieldValue.arrayUnion(ID)
+    });
     })
       .catch((error) => {
     console.error('error adding submitEvent')
     })
 
-    //different from previous submit data due to there being a difference 
-    //in the set up fo the two collections and we need to discuss that
-    var submitEventData = {
-        category: submitCategory,
-        cost: submitCost,
-        date:submitSingleDay,
-        description: submitDescription,
-        host: submitHost,
-    }
-    db.collection("events").add(submitEventData).then((docRef) => {
-      console.log('submitEvent added to events collection ID: ', docRef.id);
-    })
+    
 }
