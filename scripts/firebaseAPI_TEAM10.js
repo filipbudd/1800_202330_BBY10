@@ -18,7 +18,7 @@
   console.log("FIREBASE INITIALIZED")
 
 
-  var storage = firebase.storage();
+  // var storage = firebase.storage();
 
 
 

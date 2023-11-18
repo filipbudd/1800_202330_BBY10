@@ -1,35 +1,8 @@
-function displayCardsDynamically(collection) {
-  let cardTemplate = document.getElementById("attendedEventsCardTemplate");
-
-//db.collection(collection)
-var userDocRef = db.collection("users").doc(user.uid);
-var attendedEventsCollectionRef = userDocRef.collection("attendedEvents");
-  
-  attendedEventsCollectionRef.get()
-    .then((allAttendedEvents) => {
-      allAttendedEvents.forEach((doc) => {
-        var title = doc.data().name;
-        var details = doc.data().details;
-        var code = doc.data().code;
-        var eventsXP = doc.data().xp;
-        //var docID = doc.id;
-        let newcard = cardTemplate.content.cloneNode(true);
-
-        newcard.querySelector(".card-title").innerHTML = title;
-        newcard.querySelector(".card-length").innerHTML = "XP " + eventsXP;
-        newcard.querySelector(".card-text").innerHTML = details;
-        newcard.querySelector(".card-image").src = `../images/${code}.jpg`;
-
-        document.getElementById(collection + "-go-here").appendChild(newcard);
-      });
-    });
-}
-
 function addSubDocument(data) {
   const user = firebase.auth().currentUser;
   var userDocRef = db.collection("users").doc(user.uid);
   var attendedEventsCollectionRef = userDocRef.collection("attendedEvents");
-  var attendedEventsDocRef = attendedEventsCollectionRef.doc(); // let Firestore generate the ID
+  var attendedEventsDocRef = attendedEventsCollectionRef.doc(); 
 
   attendedEventsDocRef
     .set(data)
@@ -86,5 +59,30 @@ function initData() {
 }
 
 //initData();
+
+function displayCardsDynamically(collection) {
+  let cardTemplate = document.getElementById("attendedEventsCardTemplate");
+  let userId = localStorage.getItem("user");
+  var userDocRef = db.collection("users").doc(userId);
+  var attendedEventsCollectionRef = userDocRef.collection("attendedEvents");
+ 
+  attendedEventsCollectionRef.get().then((allAttendedEvents) => {
+    allAttendedEvents.forEach((doc) => {
+      var title = doc.data().name;
+      var details = doc.data().details;
+      var code = doc.data().code;
+      var eventsXP = doc.data().xp;
+      //var docID = doc.id;
+      let newcard = cardTemplate.content.cloneNode(true);
+
+      newcard.querySelector(".card-title").innerHTML = title;
+      newcard.querySelector(".card-length").innerHTML = "XP " + eventsXP;
+      newcard.querySelector(".card-text").innerHTML = details;
+      newcard.querySelector(".card-image").src = `../images/${code}.jpg`;
+
+      document.getElementById(collection + "-go-here").appendChild(newcard);
+    });
+  });
+}
 
 displayCardsDynamically("attendedEvents");
