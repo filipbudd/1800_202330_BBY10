@@ -44,10 +44,18 @@ if (confirm("Are you sure to submit?")) {
 //a) get user entered values
     let submitCategory = document.getElementById("category-select").value;
     let submitAge = document.getElementById("age-select").value;
-    let submitDuration = document.getElementById("multi-day-selected").value;
-    submitDuration = submitDuration ? submitDuration: "";
-    let submitSingleDay = document.getElementById("single-day-selected").value;
-    submitSingleDay = submitSingleDay ? submitSingleDay: "";
+    let singleDaySelected = document.getElementById("dateField") !== null;
+    let startDate="", endDate = "";
+    if(singleDaySelected){
+      startDate = document.getElementById("dateField").value;
+      endDate = startDate;
+    }
+    else{
+      startDate = document.getElementById("dateFieldStart").value;
+      endDate = document.getElementById("dateFieldEnd").value;
+    }
+
+
     let submitDescription = document.getElementById("description").value;
     let submitHost = document.getElementById("inputHost").value;
     let submitLocation = document.getElementById("inputLocation").value;
@@ -55,17 +63,12 @@ if (confirm("Are you sure to submit?")) {
     let submitCost = document.getElementById("cost").value;
     let latitude = document.getElementById("latitude").value;
     let longitude = document.getElementById("longitude").value;
-
-    if (submitDuration == ""){
-      let submitDate = submitDuration;
-    } else {
-      let submitDate = submitSingleDay;
-    }
     
     const submitData = {
         category: submitCategory,
         ages: submitAge,
-        date: submitDate,
+        start: startDate,
+        end: endDate,
         description: submitDescription,
         host: submitHost,
         address: submitLocation,
@@ -74,7 +77,7 @@ if (confirm("Are you sure to submit?")) {
         name: submitTitle,
         cost: submitCost,
         latitude,
-        longitude
+        longitude,
     }
     
     // currentUser.collection('submitEvent').add(submitData)
@@ -94,7 +97,7 @@ if (confirm("Are you sure to submit?")) {
     //     description: submitDescription,
     //     host: submitHost,
     // }
-    collectionRef.add(submitData).then(function(docRef) {
+      collectionRef.add(submitData).then(function(docRef) {
       console.log('submitEvent added to events collection ID: ', docRef.id);
     })
 } else {

@@ -194,16 +194,48 @@
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
   <script>
+      function addDurationField() {
+        singleDay.innerHTML = "";
+        duration.innerHTML = "";
+        const createLableStart = document.createElement("Lable");
+        createLableStart.textContent = "Start from:   ";
+        const dateFieldStart = document.createElement("input");
+        dateFieldStart.setAttribute("id", "dateFieldStart");
+        dateFieldStart.setAttribute("type", "date");
+        dateFieldStart.setAttribute("name", "date");
+        dateFieldStart.setAttribute("required", "");
 
-  </script>
+        const createLableEnd = document.createElement("Lable");
+        createLableEnd.textContent = "   to:";
+        const dateFieldEnd = document.createElement("input");
+        dateFieldEnd.setAttribute("id", "dateFieldEnd");
+        dateFieldEnd.setAttribute("type", "date");
+        dateFieldEnd.setAttribute("name", "date");
+        dateFieldEnd.setAttribute("required", "");
+        duration.appendChild(createLableStart);
+        duration.appendChild(dateFieldStart);
+        duration.appendChild(createLableEnd);
+        duration.appendChild(dateFieldEnd);
+      }
 
-  <!-- Link to scripts of your own -->
-  <!-- <script src="./scripts/script.js"></script> -->
-  <script src="/scripts/firebaseAPI_TEAM10.js"></script>
-  <script src="/scripts/skeleton.js"></script>
-  <script src="/scripts/script.js"></script>
-  <script src="/scripts/submitEvent.js"></script>
-  <script src="/scripts/map.js"></script>
-</body>
+      function addDateField() {
+        singleDay.innerHTML = "";
+        duration.innerHTML = "";
+        const dateField = document.createElement("input");
+        dateField.setAttribute("id", "dateField");
+        dateField.setAttribute("type", "date");
+        dateField.setAttribute("name", "date");
+        dateField.setAttribute("required", "");
+        singleDay.appendChild(dateField);
+      }
+    </script>
 
+    <!-- Link to scripts of your own -->
+    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="/scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/submitEvent.js"></script>
+    <script src="/scripts/map.js"></script>
+  </body>
 </html>
