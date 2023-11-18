@@ -46,3 +46,19 @@ html {
           line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+#i_editprofile-button {
+    font-size: 30pt;
+}
+
+#mypic-goes-here {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.btn:hover .material-icons {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        transition: box-shadow 0.3s ease;
+    }

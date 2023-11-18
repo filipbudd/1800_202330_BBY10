@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Account</title>
+        <link rel="icon" type="image/x-icon" href="../images/NearbyNexusIcon.png">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -21,6 +22,7 @@
 		<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
         
 		<!--Fonts from Google-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +31,7 @@
         
 		<!-- Google Icons (Material Design)-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         
 		<!-- Link to styles of your own -->
 		<link rel="stylesheet" href="/styles/style.css" />
@@ -44,19 +47,30 @@
 		<div class="container-fluid bg-light text-dark p-5">
 			<div class="container bg-light p-5">
 				<h1 class="display-4"> Welcome, <span id="user-name"></span>
-					<span id="name-goes-here"></span>
 				</h1>
 			</div>
             
             <!-- Profile Pic -->
-			<img src="/images/profilePic.png" class="mx-auto d-block" name="Profile Picture" id="account-pic">
+			<img src="/images/profilePic.png" class="mx-auto d-block" name="Profile Picture" id="mypic-goes-here">
+
             
-            <!-- Bookmarks -->
-			<div class="row justify-content-end">
-				<a class="btn" href="bookmarks.html" role="button">
-					<span id="i_bookmarks-button" class="material-icons"> bookmarks </span>
-				</a>
-			</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Edit Profile -->
+                    <div class="col text-left">
+                        <a class="btn" href="editUserProfile.html" role="button">
+                            <span id="i_editprofile-button" class="material-icons"> edit </span>
+                        </a>
+                    </div>
+
+                    <!-- Bookmarks -->
+                    <div class="col text-right">
+                        <a class="btn" href="bookmarks.html" role="button">
+                            <span id="i_bookmarks-button" class="material-icons"> bookmarks </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
             
             <!-- Bio / Description / Account Info -->
 			<div id="account-info" class="card-body border">
@@ -64,7 +78,7 @@
 					<span id="user-name"></span>
 					<span id="name-goes-here"></span>
 				</h3>
-				<div id="Description" class="h-50">DESCRIPTION DESCRIPTION</div>
+                <div id="Description" class="h-50"><span id="user-bio">This is a chance for you to share your story, interesting human!</span></div>
 			</div>
 			<br>
             
