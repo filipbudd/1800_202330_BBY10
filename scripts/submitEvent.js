@@ -7,6 +7,7 @@ function addDurationField() {
   const createLableStart = document.createElement("Lable");
   createLableStart.textContent = "Start from:   ";
   const dateFieldStart = document.createElement("input");
+  dateFieldStart.setAttribute("id", "dateFieldStart");
   dateFieldStart.setAttribute("type", "date");
   dateFieldStart.setAttribute("name", "date");
   dateFieldStart.setAttribute("required", "");
@@ -14,6 +15,7 @@ function addDurationField() {
   const createLableEnd = document.createElement("Lable");
   createLableEnd.textContent = "   to:";
   const dateFieldEnd = document.createElement("input");
+  dateFieldEnd.setAttribute("id", "dateFieldEnd");
   dateFieldEnd.setAttribute("type", "date");
   dateFieldEnd.setAttribute("name", "date");
   dateFieldEnd.setAttribute("required", "");
@@ -27,11 +29,16 @@ function addDateField() {
   singleDay.innerHTML = "";
   duration.innerHTML = "";
   const dateField = document.createElement("input");
+  dateField.setAttribute("id", "dateField");
   dateField.setAttribute("type", "date");
   dateField.setAttribute("name", "date");
   dateField.setAttribute("required", "");
   singleDay.appendChild(dateField);
 }
+
+
+
+
 
 function saveSubmitInfo() {
 if (confirm("Are you sure to submit?")) {
@@ -97,9 +104,9 @@ if (confirm("Are you sure to submit?")) {
     //     description: submitDescription,
     //     host: submitHost,
     // }
-      collectionRef.add(submitData).then(function(docRef) {
-      console.log('submitEvent added to events collection ID: ', docRef.id);
-    })
+      collectionRef.add(submitData).then(() => {
+        window.location.href = "thanks.html";
+    });
 } else {
     // location.reload();
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to NearbyNexus</title>
+    <meta name="comp1800 template" content="My 1800 App" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
+
+    <!-- Bootstrap Library CSS CDN go here -->
+    <!-- Boostrap Library JS CDN  go here -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Other libraries go here -->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+
+    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+
+    <!--Fonts from Google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa&family=Sometype+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+
+  <body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+
+    <nav id="navPlaceholder"></nav>
+    <!--USE THIS FOR THE HEADER IT WILL AUTO INSERT-->
+
+    <div class="card text-center">
+      <div class="card-header">Event submitted successfully!</div>
+      <div class="card-body">
+        <h5 class="card-title">Thanks for submitting your event!</h5>
+        <a href="/html/categories.html" class="btn btn-primary">See More events</a>
+      </div>
+    </div>
+
+    <footer id="footerPlaceholder"></footer>
+    <!--USE THIS FOR THE FOOTER IT WILL AUTO INSERT-->
+
+    <!--
+  
+    Hey team, this is the template for the website. So delete this message after. You can move stuff here. I went through a lot of pain 
+  and troubleshooting. Just know that you absolutely need to use live server to preview this, otherwise, you get a CORS error.
+  That's all, good luck! -Evin 
+  
+  -->
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+
+    <!-- Link to scripts of your own -->
+    <!-- <script src="./scripts/script.js"></script> -->
+    <script src="/scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/submitEvent.js"></script>
+    <script src="/scripts/map.js"></script>
+  </body>
+</html>

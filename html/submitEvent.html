@@ -168,7 +168,7 @@
         <input type="hidden" id="latitude" />
         <input type="hidden" id="longitude" />
         
-        <button class="btn btn-primary mt-4" type="submit" value="Submit" onclick="saveSubmitInfo()">Submit</button>
+        <button class="btn btn-primary mt-4" value="Submit" onclick="saveSubmitInfo()">Submit</button>
       </fieldset>
       </form>
     </div>
@@ -186,7 +186,10 @@
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
-  <script>
+  <!-- <script>
+      const duration = document.getElementById("multi-day-selected");
+      const singleDay = document.getElementById("single-day-selected");
+
       function addDurationField() {
         singleDay.innerHTML = "";
         duration.innerHTML = "";
@@ -221,7 +224,7 @@
         dateField.setAttribute("required", "");
         singleDay.appendChild(dateField);
       }
-    </script>
+    </script> -->
 
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
