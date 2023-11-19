@@ -40,7 +40,8 @@ function displayEventInfo() {
         var description = doc.data().description;
         var image = doc.data().image;
         var link = doc.data().link;
-        var map = doc.data().map;
+        var longitude = doc.data().longitude;
+        var latitude = doc.data().latitude;
 		var start = doc.data().start;
 		var end = doc.data().end;
         var name = doc.data().name;
@@ -69,6 +70,21 @@ function displayEventInfo() {
         let imgEvent = document.getElementById("bannerImg")
         imgEvent.src = "../images/" + image + ".jpg";
         console.log(ID + ' THIS IS THE DOC ID');
+
+        mapboxgl.accessToken =
+        "pk.eyJ1IjoiYWRhbWNoZW4zIiwiYSI6ImNsMGZyNWRtZzB2angzanBjcHVkNTQ2YncifQ.fTdfEXaQ70WoIFLZ2QaRmQ";
+        var myLatLng = [latitude, longitude];
+        var map = new mapboxgl.Map({
+            container: "googlemap",
+            style: "mapbox://styles/mapbox/streets-v12",
+            center: myLatLng,
+            zoom: 14
+
+        });
+        new mapboxgl.Marker()
+            .setLngLat(myLatLng)
+            .addTo(map);
+
     });
 }
 displayEventInfo();

@@ -66,23 +66,22 @@ function saveSubmitInfo() {
     let longitude = document.getElementById("longitude").value;
 
     const submitData = {
-	  ages: submitAge,
+      ages: submitAge,
       category: submitCategory,
-	  address: submitLocation,
-	  cost: submitCost,
+      address: submitLocation,
+      cost: submitCost,
       start: startDate,
       end: endDate,
       description: submitDescription,
-	  name: submitTitle,
+      name: submitTitle,
       host: submitHost,
       latitude,
       longitude,
     };
 
     collectionRef.add(submitData).then((docRef) => {
-	  recordEventIDforUser(docRef.id);
+      recordEventIDforUser(docRef.id);
       window.location.href = "thanks.html";
-	  
     });
   } else {
     // location.reload();
@@ -91,9 +90,9 @@ function saveSubmitInfo() {
 
 // creates array in user doc with id of submitted event recorded
 function recordEventIDforUser(ID) {
-	var userID = localStorage.getItem("user");
-    var submitEventRef = db.collection("users").doc(userID);
-	submitEventRef.update({
-            submitEvents: firebase.firestore.FieldValue.arrayUnion(ID)
-	});
+  var userID = localStorage.getItem("user");
+  var submitEventRef = db.collection("users").doc(userID);
+  submitEventRef.update({
+    submitEvents: firebase.firestore.FieldValue.arrayUnion(ID),
+  });
 }
