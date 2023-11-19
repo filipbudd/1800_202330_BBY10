@@ -81,27 +81,21 @@ function saveSubmitInfo() {
       longitude,
     };
 
-    // currentUser.collection('submitEvent').add(submitData)
-    //   .then((docRef) => {
-    // console.log('submitEvent added with ID: ', docRef.id);
-    // })
-    //   .catch((error) => {
-    // console.error('error adding submitEvent')
-    // })
-
-    //different from previous submit data due to there being a difference
-    //in the set up fo the two collections and we need to discuss that
-    // var submitEventData = {
-    //     category: submitCategory,
-    //     cost: submitCost,
-    //     date:submitSingleDay,
-    //     description: submitDescription,
-    //     host: submitHost,
-    // }
-    collectionRef.add(submitData).then(() => {
+    collectionRef.add(submitData).then((docRef) => {
+	  recordEventIDforUser(docRef.id);
       window.location.href = "thanks.html";
+	  
     });
   } else {
     // location.reload();
   }
+}
+
+// creates array in user doc with id of submitted event recorded
+function recordEventIDforUser(ID) {
+	var userID = localStorage.getItem("user");
+    var submitEventRef = db.collection("users").doc(userID);
+	submitEventRef.update({
+            submitEvents: firebase.firestore.FieldValue.arrayUnion(ID)
+	});
 }
