@@ -1,3 +1,27 @@
+
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+//turn number dates to words
+function convertSingleDate(date) {
+	dateArray = date.split("-");
+	console.log(dateArray);
+	return dateArray[2] + " " + months[dateArray[1]-1] + " " + dateArray[0];
+}
+
+function convertDurationDates(date1, date2) {
+	dateArray1 = date1.split("-");
+	dateArray2 = date2.split("-");
+
+	if (dateArray1[0] == dateArray2[0]) {
+		return dateArray1[2] + " " + months[dateArray1[1]-1] + " to "
+		+ dateArray2[2] + " " + months[dateArray2[1]-1] + dateArray1[0];
+	} else {
+		return dateArray1[2] + " " + months[dateArray1[1]-1] + " " + dateArray1[0] 
+			+ " to " + dateArray2[2] + " " + months[dateArray2[1]-1] + " " + dateArray2[0];
+	}
+}
+
+
+
 //EVINS STUFF BELOW
 
 //Get the ID from the URL (look at the url)
@@ -25,9 +49,9 @@ function displayEventInfo() {
 
 		// Generate date using start and end
 		if (start == end){
-			var date = start;
+			var date = convertSingleDate(start);
 		} else {
-			var date = start + " to " + end;
+			var date = convertDurationDates(start, end);
 		}
 
         // populate all information, and image through the Ids

@@ -1,4 +1,25 @@
 
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+//turn number dates to words
+function convertSingleDate(date) {
+	dateArray = date.split("-");
+	console.log(dateArray);
+	return dateArray[2] + " " + months[dateArray[1]-1] + " " + dateArray[0];
+}
+
+function convertDurationDates(date1, date2) {
+	dateArray1 = date1.split("-");
+	dateArray2 = date2.split("-");
+
+	if (dateArray1[0] == dateArray2[0]) {
+		return dateArray1[2] + " " + months[dateArray1[1]-1] + " to "
+		+ dateArray2[2] + " " + months[dateArray2[1]-1] + dateArray1[0];
+	} else {
+		return dateArray1[2] + " " + months[dateArray1[1]-1] + " " + dateArray1[0] 
+			+ " to " + dateArray2[2] + " " + months[dateArray2[1]-1] + " " + dateArray2[0];
+	}
+}
+
 //This function displays the cards on the 'categories.html' file
 function displayEventPageDynamically(collection) {
 
@@ -16,7 +37,15 @@ function displayEventPageDynamically(collection) {
         var description = doc.data().description;
         var category = doc.data().category;
         var name = doc.data().name;
-        var date =doc.data().date;
+        var start = doc.data().start;
+		var end = doc.data().end;
+
+		// Generate date using start and end
+		if (start == end){
+			var date = convertSingleDate(start);
+		} else {
+			var date = convertDurationDates(start, end);
+		}
 
         //THIS ONE IS DIRECTLY RELATED TO THE IMAGE DO NOT CHANGE THE IMAGE NAME
         var image = doc.data().image;
