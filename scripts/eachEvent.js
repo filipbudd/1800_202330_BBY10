@@ -71,6 +71,7 @@ function displayEventInfo() {
         imgEvent.src = "../images/" + image + ".jpg";
         console.log(ID + ' THIS IS THE DOC ID');
 
+        //add map
         mapboxgl.accessToken =
         "pk.eyJ1IjoiYWRhbWNoZW4zIiwiYSI6ImNsMGZyNWRtZzB2angzanBjcHVkNTQ2YncifQ.fTdfEXaQ70WoIFLZ2QaRmQ";
         var myLatLng = [latitude, longitude];
