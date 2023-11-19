@@ -3,7 +3,7 @@ var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 //turn number dates to words
 function convertSingleDate(date) {
 	dateArray = date.split("-");
-	console.log(dateArray);
+	// console.log(dateArray);
 	return dateArray[2] + " " + months[dateArray[1]-1] + " " + dateArray[0];
 }
 
@@ -20,6 +20,19 @@ function convertDurationDates(date1, date2) {
 	}
 }
 
+
+
+//Get the topic from the URL (look at the url, this is for the category sort) 
+let params = new URL(window.location.href);
+var topic = params.searchParams.get("topic");
+
+//Formats the URL string to match that of the database (Might be removed later)
+function formatQuery(query) {
+  let lowercase = query.toLowerCase();
+  return lowercase.charAt(0).toUpperCase() + lowercase.slice(1)
+}
+topic = formatQuery(topic)
+
 //This function displays the cards on the 'categories.html' file
 function displayEventPageDynamically(collection) {
 
@@ -28,17 +41,17 @@ function displayEventPageDynamically(collection) {
   
   //Refers the 'events' collection
   db.collection(collection).get()
-    .then(allEvents => {
+    .then(Events => {
 
       //Goes through all the cards in the DB
-      allEvents.forEach(doc => {
+      Events.forEach(doc => {
 
         //These are grabbed from the DB to be used in the card
         var description = doc.data().description;
         var category = doc.data().category;
         var name = doc.data().name;
         var start = doc.data().start;
-		var end = doc.data().end;
+		    var end = doc.data().end;
 
 		// Generate date using start and end
 		if (start == end){

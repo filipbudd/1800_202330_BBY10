@@ -33,12 +33,18 @@
 
     eventsRef.add({
       
-        eventName: "",
-        eventHost: "",
-        eventLocation: "",
-        eventDate: "",
-        eventDescription: "",
-
+        address: "",
+        ages: "",
+        category: "",
+        cost: "",
+        description: "",
+        end: "",
+        host: "",
+        latitude: "",
+        longitude: "",
+        name: "",
+        start: "",
+        
         lastUpdated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
     });
 }

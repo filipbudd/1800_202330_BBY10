@@ -22,9 +22,11 @@ function convertDurationDates(date1, date2) {
 
 
 
+
+
 //EVINS STUFF BELOW
 
-//Get the ID from the URL (look at the url)
+//Get the ID from the URL (look at the url) This is for the event ID
 let params = new URL(window.location.href);
 var ID = params.searchParams.get("docID");
 
