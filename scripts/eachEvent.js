@@ -13,13 +13,22 @@ function displayEventInfo() {
         var category = doc.data().category;
         var address = doc.data().address;
         var cost = doc.data().cost;
-        var date = doc.data().date
         var description = doc.data().description;
         var image = doc.data().image;
         var link = doc.data().link;
         var map = doc.data().map;
+		var start = doc.data().start;
+		var end = doc.data().end;
         var name = doc.data().name;
         var host = doc.data().host;
+		
+
+		// Generate date using start and end
+		if (start == end){
+			var date = start;
+		} else {
+			var date = start + " to " + end;
+		}
 
         // populate all information, and image through the Ids
         document.getElementById("event-name").innerHTML = name;

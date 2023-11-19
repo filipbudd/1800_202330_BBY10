@@ -66,17 +66,15 @@ function saveSubmitInfo() {
     let longitude = document.getElementById("longitude").value;
 
     const submitData = {
+	  ages: submitAge,
       category: submitCategory,
-      ages: submitAge,
+	  address: submitLocation,
+	  cost: submitCost,
       start: startDate,
       end: endDate,
       description: submitDescription,
+	  name: submitTitle,
       host: submitHost,
-      address: submitLocation,
-      name: submitTitle,
-      address: submitLocation,
-      name: submitTitle,
-      cost: submitCost,
       latitude,
       longitude,
     };
