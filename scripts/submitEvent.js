@@ -36,32 +36,26 @@ function addDateField() {
   singleDay.appendChild(dateField);
 }
 
-
-
-
-
 function saveSubmitInfo() {
-if (confirm("Are you sure to submit?")) {
-
-  var collectionRef = db.collection("events");
+  if (confirm("Are you sure to submit?")) {
+    var collectionRef = db.collection("events");
 
     //const user = firebase.auth().currentUser;
     // let userId = localStorage.getItem("user");
     // const currentUser = db.collection("users").doc(userId );
-//a) get user entered values
+    //a) get user entered values
     let submitCategory = document.getElementById("category-select").value;
     let submitAge = document.getElementById("age-select").value;
     let singleDaySelected = document.getElementById("dateField") !== null;
-    let startDate="", endDate = "";
-    if(singleDaySelected){
+    let startDate = "",
+      endDate = "";
+    if (singleDaySelected) {
       startDate = document.getElementById("dateField").value;
       endDate = startDate;
-    }
-    else{
+    } else {
       startDate = document.getElementById("dateFieldStart").value;
       endDate = document.getElementById("dateFieldEnd").value;
     }
-
 
     let submitDescription = document.getElementById("description").value;
     let submitHost = document.getElementById("inputHost").value;
@@ -70,23 +64,23 @@ if (confirm("Are you sure to submit?")) {
     let submitCost = document.getElementById("cost").value;
     let latitude = document.getElementById("latitude").value;
     let longitude = document.getElementById("longitude").value;
-    
+
     const submitData = {
-        category: submitCategory,
-        ages: submitAge,
-        start: startDate,
-        end: endDate,
-        description: submitDescription,
-        host: submitHost,
-        address: submitLocation,
-        name: submitTitle,
-        address: submitLocation,
-        name: submitTitle,
-        cost: submitCost,
-        latitude,
-        longitude,
-    }
-    
+      category: submitCategory,
+      ages: submitAge,
+      start: startDate,
+      end: endDate,
+      description: submitDescription,
+      host: submitHost,
+      address: submitLocation,
+      name: submitTitle,
+      address: submitLocation,
+      name: submitTitle,
+      cost: submitCost,
+      latitude,
+      longitude,
+    };
+
     // currentUser.collection('submitEvent').add(submitData)
     //   .then((docRef) => {
     // console.log('submitEvent added with ID: ', docRef.id);
@@ -95,7 +89,7 @@ if (confirm("Are you sure to submit?")) {
     // console.error('error adding submitEvent')
     // })
 
-    //different from previous submit data due to there being a difference 
+    //different from previous submit data due to there being a difference
     //in the set up fo the two collections and we need to discuss that
     // var submitEventData = {
     //     category: submitCategory,
@@ -104,10 +98,10 @@ if (confirm("Are you sure to submit?")) {
     //     description: submitDescription,
     //     host: submitHost,
     // }
-      collectionRef.add(submitData).then(() => {
-        window.location.href = "thanks.html";
+    collectionRef.add(submitData).then(() => {
+      window.location.href = "thanks.html";
     });
-} else {
+  } else {
     // location.reload();
-}
+  }
 }
