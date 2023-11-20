@@ -72,15 +72,15 @@
 	<!--Sort By-->
 	<div class="d-inline form-group px-2 col">
 		<span>Sort By:</span>
-		<select class="form-select" aria-label="Default select example">
-			<option selected>Rating</option>
-			<option value="1">Cost</option>
-			<option value="2">Date</option>
+		<select id="sort-by" class="form-select" aria-label="Default select example">
+			<option selected value="name">Alphabetical</option>
+			<option value="cost">Cost</option>
+			<option value="start">Date</option>
 		</select>
 	</div>
 	<!--Search Filter-->
 	<button class="d-inline btn dropdown-toggler m-2" type="button" id="dropdownFilterButton" data-target="#filterMenu"
-		data-toggle="collapse" aria-haspopup="true" aria-expanded="false"> Filter </button>
+		data-toggle="collapse" aria-haspopup="true" aria-expanded="false" disabled> Filter </button>
 	<div id="filterMenu" class="collapse mx-auto p-3">
 		<form class="px-5 py-5">
 			<div class="form-group">
@@ -197,7 +197,9 @@
 	<!--card-->
 	<div id="events-go-here">
 
-		<!-- DO NOT DUPLICATE THE TEMPLATE, IT SHOULD AUTOMATICALLY ADD OTHER EVENTS IN THE DB -->
+	</div>
+	
+	<!-- DO NOT DUPLICATE THE TEMPLATE, IT SHOULD AUTOMATICALLY ADD OTHER EVENTS IN THE DB -->
 		<!-- Card template starts here -->
 		<div class="row mb-2">
 			<template id="categoryCardTemplate"> <!-- this is grabbed by the 'eachEvent.js file'-->
@@ -221,8 +223,6 @@
 			</template>
 		</div>
 		<!-- Card template ends here  -->
-
-	</div>
 
 
 
