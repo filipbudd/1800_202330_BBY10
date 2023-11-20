@@ -35,13 +35,13 @@
 	<!-- Google Icons (Material Design)-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 	<link rel="stylesheet"
-	  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 	<!--Fonts from Google-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Changa&family=Sometype+Mono&display=swap" rel="stylesheet">
-	
+
 </head>
 
 <body>
@@ -70,17 +70,40 @@
 
 	</nav>
 	<!--Sort By-->
-	<div class="d-inline form-group px-2 col">
-		<span>Sort By:</span>
-		<select id="sort-by" class="form-select" aria-label="Default select example">
-			<option selected value="name">Alphabetical</option>
-			<option value="cost">Cost</option>
-			<option value="start">Date</option>
-		</select>
+	<div class="row pl-3">
+		<div id="i_sort-options" class="d-inline form-group px-2 col-5">
+			<div class="mt-2">
+				<label>Sort By:</label>
+				<select id="sort-by" class="form-select" aria-label="Default select example">
+					<option selected value="name">Alphabetical</option>
+					<option value="cost">Cost</option>
+					<option value="start">Date</option>
+				</select>
+			</div>
+			<!--Descending vs ascending for sort-->
+			<div class="row ml-2">
+			<div class="form-check mr-2">
+				<input class="form-check-input" type="radio" name="flexRadioDefault" id="ascending" checked>
+				<label class="form-check-label order-by-label" for="ascending">
+					Ascending
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="flexRadioDefault" id="descending" >
+				<label class="form-check-label order-by-label" for="descending">
+					Descending
+				</label>
+			</div>
+		</div>
+		</div>
+
+
+		<!--Search Filter-->
+		<button class="d-inline btn dropdown-toggler col-6" type="button" id="i_dropdown-filter"
+			data-target="#filterMenu" data-toggle="collapse" aria-haspopup="true" aria-expanded="false" disabled> Filter
+		</button>
 	</div>
-	<!--Search Filter-->
-	<button class="d-inline btn dropdown-toggler m-2" type="button" id="dropdownFilterButton" data-target="#filterMenu"
-		data-toggle="collapse" aria-haspopup="true" aria-expanded="false" disabled> Filter </button>
+
 	<div id="filterMenu" class="collapse mx-auto p-3">
 		<form class="px-5 py-5">
 			<div class="form-group">
@@ -198,31 +221,31 @@
 	<div id="events-go-here">
 
 	</div>
-	
-	<!-- DO NOT DUPLICATE THE TEMPLATE, IT SHOULD AUTOMATICALLY ADD OTHER EVENTS IN THE DB -->
-		<!-- Card template starts here -->
-		<div class="row mb-2">
-			<template id="categoryCardTemplate"> <!-- this is grabbed by the 'eachEvent.js file'-->
-				<div class="col-md-6 col-lg-4">
 
-					<div class="card mb-4 box-shadow">
-						<img id="card-image" class="card-image" alt="Card image cap">
-						<div class="card-body d-flex flex-column align-items-start">
-							<strong class="card-category d-inline-block mb-2 text-primary">placeholder category</strong>
-							<h3 class="mb-2">
-								<a class="text-dark card-title">placeholder title</a>
-							</h3>
-							<div class="card-date mb-1 text-muted">Nov 12</div>
-							<p class="card-text mb-auto truncate"> placeholder description</p>
-							<a class="btn btn-primary mt-2">Learn more</a>
-						</div>
-						
+	<!-- DO NOT DUPLICATE THE TEMPLATE, IT SHOULD AUTOMATICALLY ADD OTHER EVENTS IN THE DB -->
+	<!-- Card template starts here -->
+	<div class="row mb-2">
+		<template id="categoryCardTemplate"> <!-- this is grabbed by the 'eachEvent.js file'-->
+			<div class="col-md-6 col-lg-4">
+
+				<div class="card mb-4 box-shadow">
+					<img id="card-image" class="card-image" alt="Card image cap">
+					<div class="card-body d-flex flex-column align-items-start">
+						<strong class="card-category d-inline-block mb-2 text-primary">placeholder category</strong>
+						<h3 class="mb-2">
+							<a class="text-dark card-title">placeholder title</a>
+						</h3>
+						<div class="card-date mb-1 text-muted">Nov 12</div>
+						<p class="card-text mb-auto truncate"> placeholder description</p>
+						<a class="btn btn-primary mt-2">Learn more</a>
 					</div>
 
 				</div>
-			</template>
-		</div>
-		<!-- Card template ends here  -->
+
+			</div>
+		</template>
+	</div>
+	<!-- Card template ends here  -->
 
 
 

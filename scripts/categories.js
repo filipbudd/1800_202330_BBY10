@@ -29,6 +29,15 @@ function sortBy() {
 	}
 }
 
+function AscOrDescSort() {
+	let desc = document.getElementById("descending").checked
+	if (desc) {
+		return "desc";
+	} else {
+		return "asc";
+	}
+}
+
 //Get the topic from the URL (look at the url, this is for the category sort) 
 let params = new URL(window.location.href);
 var topic = params.searchParams.get("topic");
@@ -52,7 +61,7 @@ function displayEventPageDynamically(collection, sortBy) {
 	let hasEvent = false;
 	//Refers the 'events' collection
 	db.collection(collection)
-		.orderBy(sort)
+		.orderBy(sort, AscOrDescSort())
 		.get()
 		.then(Events => {
 
@@ -120,3 +129,8 @@ $("select").change(function () {
 	document.getElementById("events-go-here").replaceChildren();
 	displayEventPageDynamically("events", sortBy());
 });
+
+$("input").change( function() {
+	document.getElementById("events-go-here").replaceChildren();
+	displayEventPageDynamically("events", sortBy());
+} );
