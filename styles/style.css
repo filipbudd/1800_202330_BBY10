@@ -47,6 +47,16 @@ html {
   -webkit-box-orient: vertical;
 }
 
+.order-by-label {
+	font-size:10pt;
+}
+
+#i_dropdown-filter {
+	max-width: 80px;
+	max-height: 40px;
+}
+
+
 #i_editprofile-button {
     font-size: 30pt;
 }
