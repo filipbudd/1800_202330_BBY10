@@ -38,7 +38,7 @@ function displayEventInfo() {
         var ages = doc.data().ages;
         var category = doc.data().category;
         var address = doc.data().address;
-        var cost = doc.data().cost;
+        var cost = "$ " + doc.data().cost;
         var description = doc.data().description;
         var image = doc.data().image;
         var link = doc.data().link;

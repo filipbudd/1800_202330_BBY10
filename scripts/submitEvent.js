@@ -65,11 +65,14 @@ function saveSubmitInfo() {
     let latitude = document.getElementById("latitude").value;
     let longitude = document.getElementById("longitude").value;
 
+
+	submitCost = submitCost.replaceAll(/[^0-9|\.]/g, "");
+	let floatCost = parseFloat(submitCost);
     const submitData = {
       ages: submitAge,
       category: submitCategory,
       address: submitLocation,
-      cost: submitCost,
+      cost: floatCost,
       start: startDate,
       end: endDate,
       description: submitDescription,
@@ -81,6 +84,7 @@ function saveSubmitInfo() {
 
     collectionRef.add(submitData).then((docRef) => {
       recordEventIDforUser(docRef.id);
+	  
       window.location.href = "thanks.html";
     });
   } else {
