@@ -36,6 +36,16 @@ function addDateField() {
   singleDay.appendChild(dateField);
 }
 
+
+// upload image
+var ImageFile;
+let fileInput = document.getElementById("uploadImage");
+fileInput.addEventListener('change', function (e) {
+  ImageFile = e.target.files[0];  
+  var blob = URL.createObjectURL(ImageFile);
+  image.src = blob; 
+})
+
 function saveSubmitInfo() {
   if (confirm("Are you sure to submit?")) {
     var collectionRef = db.collection("events");
@@ -65,11 +75,20 @@ function saveSubmitInfo() {
     let latitude = document.getElementById("latitude").value;
     let longitude = document.getElementById("longitude").value;
 
+  //save 
+    let floatCost;
+	submitCost = submitCost.replaceAll(/[^0-9|\.]/g, "");
+	if (submitCost == "") {
+		floatCost = 0.0;
+	} else {
+		floatCost = parseFloat(submitCost);
+	}
+	
     const submitData = {
       ages: submitAge,
       category: submitCategory,
       address: submitLocation,
-      cost: submitCost,
+      cost: floatCost,
       start: startDate,
       end: endDate,
       description: submitDescription,
@@ -80,8 +99,10 @@ function saveSubmitInfo() {
     };
 
     collectionRef.add(submitData).then((docRef) => {
+      
+      //image
+      uploadPic(docRef.id)
       recordEventIDforUser(docRef.id);
-      window.location.href = "thanks.html";
     });
   } else {
     // location.reload();
@@ -95,4 +116,25 @@ function recordEventIDforUser(ID) {
   submitEventRef.update({
     submitEvents: firebase.firestore.FieldValue.arrayUnion(ID),
   });
+}
+
+
+//upload image
+function uploadPic(eventID) { 
+  var storageRef = storage.ref("images/" + eventID + ".jpg");
+  storageRef.put(ImageFile)
+      .then(function () {
+          console.log('2. Uploaded to Cloud Storage.');
+          storageRef.getDownloadURL()
+            .then(function (url) {        
+                  db.collection("events").doc(eventID).update({
+                          "image": url
+                      }).then(()=>{
+                        window.location.href = "thanks.html";
+                      })                     
+              })
+      })
+      .catch((error) => {
+           console.log("error uploading to cloud storage");
+      })
 }

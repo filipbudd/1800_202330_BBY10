@@ -5,8 +5,9 @@ function deleteBookmark(id) {
     
     var bookmarksRef = db.collection("users")
         .doc(userID);
-    bookmarksRef.update({ bookmarks: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
-        location.reload();
+    	bookmarksRef.update({ bookmarks: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
+		document.getElementById("i_bookmarks-go-here").replaceChildren();
+		displayBookmarksDynamically();
     });
     
 }

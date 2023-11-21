@@ -23,6 +23,7 @@ var uiConfig = {
           city: "Burnaby",                      //optional default profile info      
           address: "5566 Patterson Ave",
           bookmarks:[],//optional default profile info
+		  submitEvents:[],//optional default profile info
           bio: "This is default text just waiting to be customized!" // This is the default description
         }).then(function () {
           console.log("New user added to firestore");

@@ -3,8 +3,7 @@ var months = ["January", "February", "March", "April", "May", "June", "July", "A
 //turn number dates to words
 function convertSingleDate(date) {
 	dateArray = date.split("-");
-	console.log(dateArray);
-	return dateArray[2] + " " + months[dateArray[1]-1] + " " + dateArray[0];
+	return months[dateArray[1] - 1] + " " + dateArray[2] + " " + dateArray[0];
 }
 
 function convertDurationDates(date1, date2) {
@@ -12,11 +11,11 @@ function convertDurationDates(date1, date2) {
 	dateArray2 = date2.split("-");
 
 	if (dateArray1[0] == dateArray2[0]) {
-		return dateArray1[2] + " " + months[dateArray1[1]-1] + " to "
-		+ dateArray2[2] + " " + months[dateArray2[1]-1] + dateArray1[0];
+		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " to "
+			+  months[dateArray2[1] - 1]  + " " + dateArray2[2] + dateArray1[0];
 	} else {
-		return dateArray1[2] + " " + months[dateArray1[1]-1] + " " + dateArray1[0] 
-			+ " to " + dateArray2[2] + " " + months[dateArray2[1]-1] + " " + dateArray2[0];
+		return  months[dateArray1[1] - 1] + " " + dateArray1[2] + " " + dateArray1[0]
+			+ " to " +  months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray2[0];
 	}
 }
 
@@ -38,7 +37,7 @@ function displayEventInfo() {
         var ages = doc.data().ages;
         var category = doc.data().category;
         var address = doc.data().address;
-        var cost = doc.data().cost;
+        var cost = "$ " + doc.data().cost;
         var description = doc.data().description;
         var image = doc.data().image;
         var link = doc.data().link;
