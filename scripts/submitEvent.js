@@ -76,8 +76,14 @@ function saveSubmitInfo() {
     let longitude = document.getElementById("longitude").value;
 
   //save 
+    let floatCost;
 	submitCost = submitCost.replaceAll(/[^0-9|\.]/g, "");
-	let floatCost = parseFloat(submitCost);
+	if (submitCost == "") {
+		floatCost = 0.0;
+	} else {
+		floatCost = parseFloat(submitCost);
+	}
+	
     const submitData = {
       ages: submitAge,
       category: submitCategory,
