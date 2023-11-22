@@ -64,9 +64,9 @@ function displayThreeSubmittedEvents() {
 	var userID = localStorage.getItem("user");
 
 	let submittedEvents = db.collection("users").doc(userID);
-	console.log(submittedEvents);
 	submittedEvents.get().then((doc) => {
 		var eventsArray = doc.data().submitEvents;
+		console.log(doc.data().submitEvents);
 		
 		if (eventsArray.length == 0) {
 			eventGoHere.innerHTML = "You haven't submitted any events"
