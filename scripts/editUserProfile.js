@@ -54,7 +54,7 @@ function updateCharCount() {
     var bioInputValue = document.getElementById('bioInput').value;
 
     // Set the character limit
-    var characterLimit = 267;
+    var characterLimit = 230;
 
     // Truncate the input value if it exceeds the character limit
     if (bioInputValue.length > characterLimit) {
