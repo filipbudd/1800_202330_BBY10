@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged(function (user) {
 	if (user) {
-		localStorage.setItem("user", user.uid);
+		
 
 		// Set the user's UID as a variable
 		var uid = user.uid;
