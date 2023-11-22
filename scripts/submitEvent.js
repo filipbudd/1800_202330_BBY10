@@ -101,8 +101,13 @@ function saveSubmitInfo() {
     collectionRef.add(submitData).then((docRef) => {
       
       //image
-      uploadPic(docRef.id)
-      recordEventIDforUser(docRef.id);
+      if (ImageFile){
+        uploadPic(docRef.id)
+        recordEventIDforUser(docRef.id);
+      }
+      else{
+        window.location.href = "thanks.html";
+      }
     });
   } else {
     // location.reload();
@@ -135,6 +140,6 @@ function uploadPic(eventID) {
               })
       })
       .catch((error) => {
-           console.log("error uploading to cloud storage");
+           console.log("error uploading to cloud storage");  
       })
 }
