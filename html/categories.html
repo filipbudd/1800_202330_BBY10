@@ -69,38 +69,56 @@
 
 
 	</nav>
-	<!--Sort By-->
-	<div class="row pl-3">
-		<div id="i_sort-options" class="d-inline form-group px-2 col-5">
-			<div class="mt-2">
-				<label>Sort By:</label>
-				<select id="sort-by" class="form-select" aria-label="Default select example">
-					<option selected value="name">Alphabetical</option>
-					<option value="cost">Cost</option>
-					<option value="start">Date</option>
-				</select>
-			</div>
-			<!--Descending vs ascending for sort-->
-			<div class="row ml-2">
-			<div class="form-check mr-2">
+
+
+
+
+	<div class="row p-3">
+		<!--Categorie sorting-->
+		<div id="i_sort-options" class="d-inline form-group col-4">
+			<label>Category:</label>
+			<select id="sort-by" class="form-select" aria-label="Default select example">
+				<option selected value="all">All</option>
+				<option value="volunteering">Volunteering</option>
+				<option value="sports">Sports</option>
+				<option value="educational">Educational</option>
+				<option value="festival">Festival</option>
+				<option value="arts">Arts</option>
+				<option value="other">Other</option>
+			</select>
+		</div>
+
+		<!--Sort By-->
+		<div class="d-inline form-group col-4">
+			<label>Sort By:</label>
+			<select id="sort-by" class="form-select" aria-label="Default select example">
+				<option selected value="name">Alphabetical</option>
+				<option value="cost">Cost</option>
+				<option value="start">Date</option>
+			</select>
+		</div>
+
+		<!--Descending vs ascending for sort-->
+		<div class="row d-inline form-group">
+			<div class="form-check d-lg-inline">
 				<input class="form-check-input" type="radio" name="flexRadioDefault" id="ascending" checked>
 				<label class="form-check-label order-by-label" for="ascending">
 					Ascending
 				</label>
 			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="flexRadioDefault" id="descending" >
+			<div class="form-check d-lg-inline">
+				<input class="form-check-input" type="radio" name="flexRadioDefault" id="descending">
 				<label class="form-check-label order-by-label" for="descending">
 					Descending
 				</label>
 			</div>
 		</div>
-		</div>
 
+		
 
 		<!--Search Filter-->
-		<button class="d-inline btn dropdown-toggler col-6" type="button" id="i_dropdown-filter"
-			data-target="#filterMenu" data-toggle="collapse" aria-haspopup="true" aria-expanded="false" disabled> Filter
+		<button class="d-none btn dropdown-toggler col-6" type="button" id="i_dropdown-filter" data-target="#filterMenu"
+			data-toggle="collapse" aria-haspopup="true" aria-expanded="false" style="display: none;"> Filter
 		</button>
 	</div>
 

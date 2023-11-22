@@ -15,7 +15,7 @@ function convertDurationDates(date1, date2) {
 			+  months[dateArray2[1] - 1]  + " " + dateArray2[2] + dateArray1[0];
 	} else {
 		return  months[dateArray1[1] - 1] + " " + dateArray1[2] + " " + dateArray1[0]
-			+ " to " +  months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray2[0];
+			+ " - " +  months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray2[0];
 	}
 }
 
