@@ -69,7 +69,8 @@ function displayEventInfo() {
 
         //formats the image directory and adds it
         let imgEvent = document.getElementById("bannerImg")
-        imgEvent.src = "../images/" + image + ".jpg";
+		console.log(image);
+        imgEvent.src = image;
         console.log(ID + ' THIS IS THE DOC ID');
 
         //add map

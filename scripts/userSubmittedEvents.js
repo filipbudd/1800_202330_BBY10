@@ -32,10 +32,27 @@ function deleteBookmark(id) {
     
 }
 
+function deleteEventFromFirestore(id) {
+	var eventRef = db.collection("events").doc(id);
+	eventRef.get().then((doc) => {
+		var image = doc.data().image;
+		var fileRef = storage.refFromURL(image);
+
+		fileRef.delete().then(function(){
+			console.log("Image deleted");
+		});
+	});
+	eventRef.delete().then(function() {
+		console.log("Event deleted");
+	});
+
+}
+
 function deleteSubmittedEvent(id) {
     var submittedEventRef = db.collection("users")
         .doc(userID);
-		submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
+	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
+		deleteEventFromFirestore(id);		
 		document.getElementById("i_events-go-here").replaceChildren();
 		displaySubmittedEvent();
     });
