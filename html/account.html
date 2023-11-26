@@ -23,6 +23,7 @@
 		<script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
         <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+		
         
 		<!--Fonts from Google-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,15 +59,15 @@
                 <div class="row">
                     <!-- Edit Profile -->
                     <div class="col text-left">
-                        <a class="btn" href="editUserProfile.html" role="button">
-                            <span id="i_editprofile-button" class="material-icons"> edit </span>
+                        <a class="btn" id="profilebutton" href="editUserProfile.html" role="button">
+                            <span id="i_editprofile-button" class="material-icons"> edit </span> <b> Edit </b>
                         </a>
                     </div>
 
                     <!-- Bookmarks -->
                     <div class="col text-right">
-                        <a class="btn" href="bookmarks.html" role="button">
-                            <span id="i_bookmarks-button" class="material-icons"> bookmarks </span>
+                        <a class="btn" id="profilebutton" href="bookmarks.html" role="button">
+                            <span id="i_bookmarks-button" class="material-icons"> bookmarks </span> <b> Bookmarks </b>
                         </a>
                     </div>
                 </div>
@@ -78,7 +79,7 @@
 					<span id="user-name"></span>
 					<span id="name-goes-here"></span>
 				</h3>
-                <div id="Description" class="h-50"><span id="user-bio">This is a chance for you to share your story, interesting human!</span></div>
+                <div id="Description" class="h-50"><p> <b> Bio: </b> </p><span id="user-bio">This is a chance for you to share your story, interesting human!</span></div>
 			</div>
 			<br>
             

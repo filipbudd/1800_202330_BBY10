@@ -2,13 +2,13 @@
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 //turn number dates to words
 function convertSingleDate(date) {
-	dateArray = date.split("-");
+	let dateArray = date.split("-");
 	return months[dateArray[1] - 1] + " " + dateArray[2] + " " + dateArray[0];
 }
 
 function convertDurationDates(date1, date2) {
-	dateArray1 = date1.split("-");
-	dateArray2 = date2.split("-");
+	let dateArray1 = date1.split("-");
+	let dateArray2 = date2.split("-");
 
 	if (dateArray1[0] == dateArray2[0]) {
 		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " to "
@@ -69,7 +69,8 @@ function displayEventInfo() {
 
         //formats the image directory and adds it
         let imgEvent = document.getElementById("bannerImg")
-        imgEvent.src = "../images/" + image + ".jpg";
+		console.log(image);
+        imgEvent.src = image;
         console.log(ID + ' THIS IS THE DOC ID');
 
         //add map

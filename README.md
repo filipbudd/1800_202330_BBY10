@@ -6,7 +6,7 @@ Imagine a world where communities come together to share experiences and events.
 
 ## 2. Names of Contributors
 List team members and/or short bio's here... 
-* I'm Evin I like computer
+* I'm Evin I like computers ( !IMPORTANT! There is another contributor under the name tsn.nmi, which is one of my other accounts!)
 * Filip! I'm the epic one who has experience in just about everything. A jack of all trades, if you will.
 * Hi, my name is Carol! I am excited to start this journey of creating a web application!
 * Helo helo, my name is Eugenie. I have no experience outside of python but I was pretty good at the snake language. 

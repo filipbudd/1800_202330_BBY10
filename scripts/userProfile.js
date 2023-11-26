@@ -57,6 +57,28 @@ firebase.auth().onAuthStateChanged(function (user) {
 	}
 });
 
+
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+//turn number dates to words
+function convertSingleDate(date) {
+	let dateArray = date.split("-");
+	return months[dateArray[1] - 1] + " " + dateArray[2];
+}
+
+function convertDurationDates(date1, date2) {
+	let dateArray1 = date1.split("-");
+	let dateArray2 = date2.split("-");
+
+	if (dateArray1[0] == dateArray2[0]) {
+		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " - "
+			+  months[dateArray2[1] - 1]  + " " + dateArray2[2];
+	} else {
+		return  months[dateArray1[1] - 1] + " " + dateArray1[2]
+			+ " - " +  months[dateArray2[1] - 1] + " " + dateArray2[2];
+	}
+}
+
+
 function displayThreeSubmittedEvents() {
 	let cardTemplate = document.getElementById("i_event-title-template");
 	let eventGoHere = document.getElementById("i_event-titles");
@@ -75,7 +97,14 @@ function displayThreeSubmittedEvents() {
 				console.log(eventID);
 				db.collection("events").doc(eventID).get().then(doc => {
 					var title = doc.data().name;
-					var date = doc.data().date;
+					var start = doc.data().start;
+					var end = doc.data().end;
+
+					if (start == end){
+						var date = convertSingleDate(start);
+					} else {
+						var date = convertDurationDates(start, end);
+					}
 	
 					var docID = doc.id;
 	
