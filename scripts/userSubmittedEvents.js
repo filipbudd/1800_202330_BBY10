@@ -21,25 +21,7 @@ function convertDurationDates(date1, date2) {
 	}
 }
 
-function deleteEventFromFirestore(id) {
-	console.log(id);
-	db.collection("events").doc(id).get().then(doc => {
-		console.log(doc.data());
-		var fileRef = storage.refFromURL(image);
-
-		fileRef.delete().then(function(){
-			console.log("Image deleted");
-		});
-	});
-	db.collection("events").doc(id).delete().then(function() {
-		console.log("Event deleted");
-	});
-
-}
-
-function deleteSubmittedEvent(id) {
-	deleteEventFromFirestore(id);
-
+function deleteUserRecordOfEvent(id) {
 	db.collection("events").doc(id).delete();
     var submittedEventRef = db.collection("users")
         .doc(userID);
@@ -48,9 +30,26 @@ function deleteSubmittedEvent(id) {
 		document.getElementById("i_events-go-here").replaceChildren();
 		displaySubmittedEvent();
     });
-
-	
 }
+
+function deleteSubmittedEvent(id) {
+	db.collection("events").doc(id).get().then(doc => {
+		var image = doc.data().image;
+		var fileRef = storage.refFromURL(image);
+
+		fileRef.delete().then(function(){
+			console.log("Image deleted");
+		});
+
+		db.collection("events").doc(id).delete().then(() => {
+			console.log("event deleted");
+		});
+		deleteUserRecordOfEvent(id);
+	});
+
+}
+
+
 
 function displaySubmittedEvent() {
     let cardTemplate = document.getElementById("i_event-template");

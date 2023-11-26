@@ -129,18 +129,31 @@ function displayThreeSubmittedEvents() {
 
 displayThreeSubmittedEvents();
 
-function deleteSubmittedEvent(id) {
-    var userID = localStorage.getItem("user");
-
+function deleteUserRecordOfEvent(id) {
+	db.collection("events").doc(id).delete();
     var submittedEventRef = db.collection("users")
         .doc(userID);
-		submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
-		document.getElementById("i_event-titles").replaceChildren();
-		displayThreeSubmittedEvents();
+	
+	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
+		document.getElementById("i_events-go-here").replaceChildren();
+		displaySubmittedEvent();
     });
+}
 
-	db.collection("events")
-        .doc(id).delete();
+function deleteSubmittedEvent(id) {
+	db.collection("events").doc(id).get().then(doc => {
+		var image = doc.data().image;
+		var fileRef = storage.refFromURL(image);
+
+		fileRef.delete().then(function(){
+			console.log("Image deleted");
+		});
+
+		db.collection("events").doc(id).delete().then(() => {
+			console.log("event deleted");
+		});
+		deleteUserRecordOfEvent(id);
+	});
 
 }
 
