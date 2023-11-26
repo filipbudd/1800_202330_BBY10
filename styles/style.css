@@ -38,6 +38,11 @@ html {
   font-size: 30pt;
 }
 
+.back-arrow {
+	font-size: 28pt;
+	font-weight: bold;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow:ellipsis;
