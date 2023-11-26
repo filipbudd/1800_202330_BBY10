@@ -21,44 +21,35 @@ function convertDurationDates(date1, date2) {
 	}
 }
 
-function deleteBookmark(id) {
-    
-    var bookmarksRef = db.collection("users")
-        .doc(userID);
-    	bookmarksRef.update({ bookmarks: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
-		document.getElementById("i_bookmarks-go-here").replaceChildren();
-		displayBookmarksDynamically();
-    });
-    
-}
-
 function deleteEventFromFirestore(id) {
-	var eventRef = db.collection("events").doc(id);
-	eventRef.get().then((doc) => {
-		var image = doc.data().image;
+	console.log(id);
+	db.collection("events").doc(id).get().then(doc => {
+		console.log(doc.data());
 		var fileRef = storage.refFromURL(image);
 
 		fileRef.delete().then(function(){
 			console.log("Image deleted");
 		});
 	});
-	eventRef.delete().then(function() {
+	db.collection("events").doc(id).delete().then(function() {
 		console.log("Event deleted");
 	});
 
 }
 
 function deleteSubmittedEvent(id) {
+	deleteEventFromFirestore(id);
+
+	db.collection("events").doc(id).delete();
     var submittedEventRef = db.collection("users")
         .doc(userID);
+	
 	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
-		deleteEventFromFirestore(id);		
 		document.getElementById("i_events-go-here").replaceChildren();
 		displaySubmittedEvent();
     });
 
-	db.collection("events")
-        .doc(id).delete();
+	
 }
 
 function displaySubmittedEvent() {
