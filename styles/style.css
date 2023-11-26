@@ -98,3 +98,10 @@ html {
     min-height: 100px; /* Set a minimum height, adjust as needed */
     word-wrap: break-word; /* Allow long words to break and wrap */
 }
+
+footer {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
