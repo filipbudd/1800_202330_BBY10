@@ -12,10 +12,10 @@ function convertDurationDates(date1, date2) {
 
 	if (dateArray1[0] == dateArray2[0]) {
 		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " to "
-			+  months[dateArray2[1] - 1]  + " " + dateArray2[2] + dateArray1[0];
+			+ months[dateArray2[1] - 1] + " " + dateArray2[2] + dateArray1[0];
 	} else {
-		return  months[dateArray1[1] - 1] + " " + dateArray1[2] + " " + dateArray1[0]
-			+ " - " +  months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray2[0];
+		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " " + dateArray1[0]
+			+ " - " + months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray2[0];
 	}
 }
 
@@ -49,6 +49,78 @@ function formatQuery(query) {
 }
 
 if (topic != null) { topic = formatQuery(topic); }
+
+
+if (topic == null) {
+	//This function displays the cards on the 'categories.html' file
+	function displayEventPageDynamically(collection, sortBy) {
+
+		let sort = sortBy;
+		console.log(sort);
+		//gets the card template id
+		let cardTemplate = document.getElementById("categoryCardTemplate");
+
+		//Refers the 'events' collection
+		db.collection(collection)
+			.orderBy(sort, AscOrDescSort())
+			.get()
+			.then(Events => {
+
+				//Goes through all the cards in the DB
+				Events.forEach(doc => {
+
+					//These are grabbed from the DB to be used in the card
+					var description = doc.data().description;
+					var category = doc.data().category;
+					var name = doc.data().name;
+					var start = doc.data().start;
+					var end = doc.data().end;
+
+					// Generate date using start and end
+					if (start == end) {
+						var date = convertSingleDate(start);
+					} else {
+						var date = convertDurationDates(start, end);
+					}
+
+					//THIS ONE IS DIRECTLY RELATED TO THE IMAGE DO NOT CHANGE THE IMAGE NAME
+					var image = doc.data().image;
+
+					//Create a new card
+					let newcard = cardTemplate.content.cloneNode(true);
+
+					//this is the auto generated ID for the individual events
+					var docID = doc.id;
+
+					//This one writes the auto generated id into the URL as a query
+					newcard.querySelector('.card-title').href = "eachEvent.html?docID=" + doc.id;
+					newcard.querySelector('.btn').href = "eachEvent.html?docID=" + doc.id;
+
+					//These add dynamic words to the card
+					newcard.querySelector('.card-title').innerHTML = name;
+					newcard.querySelector('.card-date').innerHTML = date;
+					newcard.querySelector('.card-text').innerHTML = description;
+					newcard.querySelector('.card-category').innerHTML = category;
+
+					//These 2 lines handle the image and its route formatting
+					let cardimg = newcard.getElementById('card-image');
+					cardimg.src = "/images/" + image + ".jpg";
+
+					//This adds the card
+					document.getElementById("events-go-here").appendChild(newcard);
+
+				});
+
+				//Changes the breadcrumb in 'categories.html'
+				document.getElementById("category-title").innerHTML = topic;
+			});
+
+	}
+}
+
+
+
+
 
 //This function displays the cards on the 'categories.html' file
 function displayEventPageDynamically(collection, sortBy) {
@@ -130,7 +202,28 @@ $("select").change(function () {
 	displayEventPageDynamically("events", sortBy());
 });
 
-$("input").change( function() {
+$("input").change(function () {
 	document.getElementById("events-go-here").replaceChildren();
 	displayEventPageDynamically("events", sortBy());
-} );
+});
+
+
+function redirectToLink() {
+
+	getPathFromUrl(params.href);
+	// Get the selected option element
+	var selectElement = document.getElementById("sort-by");
+	var selectedOption = selectElement.options[selectElement.selectedIndex];
+
+	// Get the link from the 'data-link' attribute
+	var link = selectedOption.getAttribute("category-link");
+
+	// Redirect to the selected link
+	if (link) {
+		window.location.href = link;
+	}
+}
+
+function getPathFromUrl(url) {
+	return url.split("?")[0];
+}

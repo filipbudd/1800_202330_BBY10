@@ -30,6 +30,8 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 
+	
+
 	<!-- Other libraries go here -->
 
 	<!-- Google Icons (Material Design)-->
@@ -47,7 +49,6 @@
 <body>
 	<nav id="navPlaceholder"></nav>
 	<!--breadcrumb-->
-	<pre></pre>
 	<nav aria-label="breadcrumb">
 
 
@@ -62,7 +63,7 @@
 			</li>
 
 			<li class="breadcrumb-item active" id="category-title" aria-current="page">
-				Sports
+				
 			</li>
 
 		</ol>
@@ -77,14 +78,14 @@
 		<!--Categorie sorting-->
 		<div id="i_sort-options" class="d-inline form-group col-4">
 			<label>Category:</label>
-			<select id="sort-by" class="form-select" aria-label="Default select example">
-				<option selected value="all">All</option>
-				<option value="volunteering">Volunteering</option>
-				<option value="sports">Sports</option>
-				<option value="educational">Educational</option>
-				<option value="festival">Festival</option>
-				<option value="arts">Arts</option>
-				<option value="other">Other</option>
+			<select id="sort-by" class="form-select" aria-label="Default select example" onchange="redirectToLink()">
+				<option selected value="all" category-link="categories.html" >Select</option>
+				<option value="volunteering" category-link="categories.html?topic=volunteering">Volunteering</option>
+				<option value="sports" category-link="categories.html?topic=sports">Sports</option>
+				<option value="educational" category-link="categories.html?topic=educational">Educational</option>
+				<option value="festival" category-link="categories.html?topic=festival">Festival</option>
+				<option value="arts" category-link="categories.html?topic=arts">Arts</option>
+				<option value="other" category-link="categories.html?topic=other">Other</option>
 			</select>
 		</div>
 
@@ -292,6 +293,7 @@
 	<script src="/scripts/script.js"></script>
 	<script src="/scripts/firebaseAPI_TEAM10.js"></script>
 	<script src="/scripts/categories.js"></script>
+	
 </body>
 
 </html>
