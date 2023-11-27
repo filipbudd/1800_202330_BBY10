@@ -115,13 +115,12 @@ footer {
   width: 100%;
 }
 
-<<<<<<< HEAD
 /* Change this bottom margin if the size of it changes (Just do your best to estimate it) */
 /* This is so that content doesn't get covered by the fixed footer */
 body {
   margin-bottom: 110px;
-=======
 .account-info-icons {
 	font-size: 40pt;
->>>>>>> f4e96c43092379509122516c4427f2abb171cad2
 }
+}
+
