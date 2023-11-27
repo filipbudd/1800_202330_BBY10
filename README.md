@@ -17,9 +17,9 @@ List team members and/or short bio's here...
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
 
 - HTML, CSS, JavaScript
-- Bootstrap 5.0 (Frontend library)
+- Bootstrap 4.3(Frontend library)
 - Firebase 8.0 (BAAS - Backend as a Service)
-- ...
+- Mapbox (Reference: https://docs.mapbox.com/mapbox-gl-js/example/marker-from-geocode/)
 
 ## 4. Complete setup/installion/usage
 
@@ -28,10 +28,12 @@ Here are the steps ...
 <<<<<<< HEAD
 * - Leave.
 =======
-
+- If you are a general user:
+- First step: Sign up with your email
 - ...
 - ...
-- ...
+- If you are a business owner:
+- First step: Sign up with your email
 >>>>>>> a6206f90a2f5664b8e28426c46a726fd44a47fc4
 
 ## 5. Known Bugs and Limitations
