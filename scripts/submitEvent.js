@@ -96,6 +96,7 @@ function saveSubmitInfo() {
       host: submitHost,
       latitude,
       longitude,
+      submit_time: firebase.firestore.FieldValue.serverTimestamp(),
     };
 
     collectionRef.add(submitData).then((docRef) => {
