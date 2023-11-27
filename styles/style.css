@@ -119,8 +119,8 @@ footer {
 /* This is so that content doesn't get covered by the fixed footer */
 body {
   margin-bottom: 110px;
+}
+
 .account-info-icons {
 	font-size: 40pt;
 }
-}
-

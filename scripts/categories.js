@@ -68,6 +68,7 @@ if (topic == null) {
 					//These are grabbed from the DB to be used in the card
 					var description = doc.data().description;
 					var category = doc.data().category;
+					var cost = "$ " + doc.data().cost;
 					var name = doc.data().name;
 					var start = doc.data().start;
 					var end = doc.data().end;
@@ -98,6 +99,7 @@ if (topic == null) {
 					newcard.querySelector('.card-date').innerHTML = date;
 					newcard.querySelector('.card-text').innerHTML = description;
 					newcard.querySelector('.card-category').innerHTML = category;
+					newcard.querySelector('.card-cost').innerHTML = cost;
 
 					
 					//These 2 lines handle the image and its route formatting
