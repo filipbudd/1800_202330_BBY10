@@ -52,7 +52,7 @@ if (topic != null) { topic = formatQuery(topic); }
 
 
 if (topic == null) {
-	//This function displays the cards on the 'categories.html' file
+	//This function displays the cards on the 'categories.html' file (ALL)
 	function displayEventPageDynamically(collection, sortBy) {
 
 		let sort = sortBy;
@@ -75,6 +75,7 @@ if (topic == null) {
 					var name = doc.data().name;
 					var start = doc.data().start;
 					var end = doc.data().end;
+					
 
 					// Generate date using start and end
 					if (start == end) {
@@ -102,10 +103,12 @@ if (topic == null) {
 					newcard.querySelector('.card-text').innerHTML = description;
 					newcard.querySelector('.card-category').innerHTML = category;
 
+					
 					//These 2 lines handle the image and its route formatting
-					let cardimg = newcard.getElementById('card-image');
-					cardimg.src = "/images/" + image + ".jpg";
-
+					let existingImage = newcard.querySelector('.card-image').innerHTML = "<img class=\"card-image img-fluid\" src=\"" + image + "\" alt=\"Firebase Image\">";
+					console.log(existingImage);
+					existingImage.src = image;
+					
 					//This adds the card
 					document.getElementById("events-go-here").appendChild(newcard);
 
@@ -122,7 +125,7 @@ if (topic == null) {
 
 
 
-//This function displays the cards on the 'categories.html' file
+//This function displays the cards on the 'categories.html' file (SORTED BY TOPIC)
 function displayEventPageDynamically(collection, sortBy) {
 
 	let sort = sortBy;
@@ -147,6 +150,7 @@ function displayEventPageDynamically(collection, sortBy) {
 					var name = doc.data().name;
 					var start = doc.data().start;
 					var end = doc.data().end;
+					var img = doc.data().image;
 
 					// Generate date using start and end
 					if (start == end) {
@@ -173,10 +177,11 @@ function displayEventPageDynamically(collection, sortBy) {
 					newcard.querySelector('.card-date').innerHTML = date;
 					newcard.querySelector('.card-text').innerHTML = description;
 					newcard.querySelector('.card-category').innerHTML = category;
+					// newcard.querySelector('.carg-image').innerHTML = img;
 
 					//These 2 lines handle the image and its route formatting
-					let cardimg = newcard.getElementById('card-image');
-					cardimg.src = "/images/" + image + ".jpg";
+					// let cardimg = newcard.getElementById('card-image');
+					// cardimg.src = img;
 
 					//This adds the card
 					document.getElementById("events-go-here").appendChild(newcard);

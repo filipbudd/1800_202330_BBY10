@@ -30,7 +30,7 @@
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
 
-	
+
 
 	<!-- Other libraries go here -->
 
@@ -63,7 +63,7 @@
 			</li>
 
 			<li class="breadcrumb-item active" id="category-title" aria-current="page">
-				
+
 			</li>
 
 		</ol>
@@ -79,7 +79,7 @@
 		<div id="i_sort-options" class="d-inline form-group col-4">
 			<label>Category:</label>
 			<select id="sort-by" class="form-select" aria-label="Default select example" onchange="redirectToLink()">
-				<option selected value="all" category-link="categories.html" >Select</option>
+				<option selected value="all" category-link="categories.html">Select</option>
 				<option value="volunteering" category-link="categories.html?topic=volunteering">Volunteering</option>
 				<option value="sports" category-link="categories.html?topic=sports">Sports</option>
 				<option value="educational" category-link="categories.html?topic=educational">Educational</option>
@@ -115,7 +115,7 @@
 			</div>
 		</div>
 
-		
+
 
 		<!--Search Filter-->
 		<button class="d-none btn dropdown-toggler col-6" type="button" id="i_dropdown-filter" data-target="#filterMenu"
@@ -246,9 +246,11 @@
 	<div class="row mb-2">
 		<template id="categoryCardTemplate"> <!-- this is grabbed by the 'eachEvent.js file'-->
 			<div class="col-md-6 col-lg-4">
-
 				<div class="card mb-4 box-shadow">
-					<img id="card-image" class="card-image" alt="Card image cap">
+					
+					<div class="card-image"></div>
+					<!-- <img class="card-image" src="" alt="Firebase Image"> -->
+
 					<div class="card-body d-flex flex-column align-items-start">
 						<strong class="card-category d-inline-block mb-2 text-primary">placeholder category</strong>
 						<h3 class="mb-2">
@@ -293,7 +295,7 @@
 	<script src="/scripts/script.js"></script>
 	<script src="/scripts/firebaseAPI_TEAM10.js"></script>
 	<script src="/scripts/categories.js"></script>
-	
+
 </body>
 
 </html>
