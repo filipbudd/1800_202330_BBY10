@@ -60,16 +60,16 @@ rel="stylesheet"
   <!--USE THIS FOR THE HEADER IT WILL AUTO INSERT-->
 
 
-  <div class="container">
+  <div class="container mt-5">
     <form class="justify-content-center">
       <h3>Event Submission Form</h3>
       <fieldset class="col mb-5" id="submission-form">
-        <div class="form-group row">
+        <div class="form-group row mt-5">
           <!--multi-select category-->
-          <label for="category-select" class="col-sm-3 col-form-label">Category</label>
-          <div class="col-sm-12 col-lg-10">
-            <select class="form-control" id="category-select" required>
-              <option value=""></option>
+          <label for="category-select" class="col-sm-3 col-form-label font-weight-bold">Category</label>
+          <div class="col-sm-12 col-lg-5">
+            <select class="form-control border-primary" id="category-select" required>
+              <option value="">Please choose one category</option>
               <option value="Volunteering">Volunteering</option>
               <option value="Sports">Sports</option>
               <option value="Educational">Educational</option>
@@ -82,18 +82,18 @@ rel="stylesheet"
 
         <div class="form-group row">
           <!--Name of event-->
-          <label for="eventName" class="col-sm-3 col-form-label">Title</label>
-          <div class="col-sm-12 col-lg-10">
-            <input type="text" class="form-control" id="eventName" />
+          <label for="eventName" class="col-sm-3 col-form-label font-weight-bold">Title</label>
+          <div class="col-sm-12 col-lg-5">
+            <input type="text" class="form-control border-primary" id="eventName" placeholder="eg: Chrismas Party" />
           </div>
         </div>
 
         <div class="form-group row">
           <!--multi-select category-->
-          <label for="category-select" class="col-sm-3 col-form-label">For Ages</label>
-          <div class="col-sm-12 col-lg-10">
-            <select class="form-control" id="age-select" required>
-			  <option value="All Ages">All Ages</option>
+          <label for="category-select" class="col-sm-3 col-form-label font-weight-bold">For Ages</label>
+          <div class="col-sm-12 col-lg-5">
+            <select class="form-control border-primary" id="age-select" required>
+			        <option value="All Ages">All Ages</option>
               <option value="2 and Under">2 and Under</option>
               <option value="3-5">3-5</option>
               <option value="6-12">6-12</option>
@@ -106,8 +106,8 @@ rel="stylesheet"
         <div class="form-group">
           <!--select if its multi day or single day-->
           <div class="row">
-            <legend class="col-form-label col-sm-3 pt-0">Duration</legend>
-            <div class="col-sm-12 col-lg-10">
+            <legend class="col-form-label col-sm-3 pt-0 font-weight-bold">Duration</legend>
+            <div class="col-sm-12 col-lg-5">
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="gridRadios" id="multi-day" value="option1"
                   onclick="addDurationField()" />
@@ -139,24 +139,24 @@ rel="stylesheet"
 
         <div class="form-group row">
           <!--description-->
-          <label for="description" class="col-form-label col-sm-3">Description</label>
-          <div class="col-sm-12 col-lg-10">
-            <textarea class="form-control" id="description" rows="3"></textarea>
+          <label for="description" class="col-form-label col-sm-3 font-weight-bold">Description</label>
+          <div class="col-sm-12 col-lg-5">
+            <textarea class="form-control border-primary" id="description" rows="3" placeholder="Please enter at least 20 words."></textarea>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="inputHost" class="col-sm-3 col-form-label">Host</label>
-          <div class="col-sm-12 col-lg-10">
-            <input type="text" class="form-control" id="inputHost" />
+          <label for="inputHost" class="col-sm-3 col-form-label font-weight-bold">Host</label>
+          <div class="col-sm-12 col-lg-5">
+            <input type="text" class="form-control border-primary" id="inputHost" placeholder="eg: Your name" />
           </div>
         </div>
 
         <!---this is a placeholder because this is too much for me-->
         <div class="form-group row">
-          <label for="inputLocation" class="col-sm-3 col-form-label">Location</label>
-          <div class="col-sm-12 col-lg-10">
-            <input type="text" class="form-control" id="inputLocation" onchange="showMap()" />
+          <label for="inputLocation" class="col-sm-3 col-form-label font-weight-bold">Location</label>
+          <div class="col-sm-12 col-lg-5">
+            <input type="text" class="form-control border-primary" id="inputLocation" placeholder="Street, City, Province, Country" onchange="showMap()" />
           </div>
         </div>
 
@@ -164,26 +164,26 @@ rel="stylesheet"
 
         <div class="form-group row">
           <!--Prices options-->
-          <label for="cost" class="col-sm-3 col-form-label">Cost</label>
-          <div class="col-sm-12 col-lg-10">
-            <input type="text" class="form-control" id="cost" />
+          <label for="cost" class="col-sm-3 col-form-label font-weight-bold">Cost</label>
+          <div class="col-sm-12 col-lg-5">
+            <input type="text" class="form-control border-primary" id="cost" placeholder="eg: $5"/>
           </div>
         </div>
 
         <div class="form-group row">
-          <label for="uploadImage" class="col-sm-3 col-form-label">Upload Image</label>
-          <div class="col-sm-12 col-lg-10">
-            <input type="file" id="uploadImage" accept="image/*" />
-            
+          <label for="uploadImage" class="col-sm-3 col-form-label font-weight-bold">Upload Image</label>
+          <div class="col-sm-12 col-lg-5">
+            <input type="file" id="uploadImage" accept="image/*" />  
           </div>
         </div>
+        <input type="button" class="btn btn-primary mt-4 mb-4 col-sm-8" value="Submit" onclick="saveSubmitInfo()" />
 
-        <div id="map" style="max-width: 740px; height: 400px"></div>
+        <div id="map" style="max-width: 740px; height: 400px; padding-top: 50px;"></div>
 
         <input type="hidden" id="latitude" />
         <input type="hidden" id="longitude" />
         
-        <input type="button" class="btn btn-primary mt-4" value="Submit" onclick="saveSubmitInfo()" />
+        
       </fieldset>
       </form>
     </div>
