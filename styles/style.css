@@ -34,6 +34,9 @@ html {
   font-size: 30pt;
 }
 
+.card-content {
+	font-size: 30pt;
+}
 .bookmarks-page-button{
   font-size: 30pt;
 }
@@ -102,4 +105,8 @@ html {
 #account-info {
     min-height: 100px; /* Set a minimum height, adjust as needed */
     word-wrap: break-word; /* Allow long words to break and wrap */
+}
+
+.account-info-icons {
+	font-size: 40pt;
 }
