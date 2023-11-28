@@ -138,6 +138,17 @@ body {
     color: #582630 !important;
 }
 
+/* Add this CSS code to your stylesheet */
+.container a {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container a:hover {
+  transform: scale(1.2); /* You can adjust the scaling factor as needed */
+}
+
+
 .card-image {
 	max-width: 500px;
 	max-height: 800px;
