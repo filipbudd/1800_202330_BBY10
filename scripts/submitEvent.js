@@ -36,15 +36,14 @@ function addDateField() {
   singleDay.appendChild(dateField);
 }
 
-
 // upload image
 var ImageFile;
 let fileInput = document.getElementById("uploadImage");
-fileInput.addEventListener('change', function (e) {
-  ImageFile = e.target.files[0];  
+fileInput.addEventListener("change", function (e) {
+  ImageFile = e.target.files[0];
   var blob = URL.createObjectURL(ImageFile);
-  image.src = blob; 
-})
+  image.src = blob;
+});
 
 function saveSubmitInfo() {
   if (confirm("Are you sure to submit?")) {
@@ -75,15 +74,15 @@ function saveSubmitInfo() {
     let latitude = document.getElementById("latitude").value;
     let longitude = document.getElementById("longitude").value;
 
-  //save 
+    //save
     let cost;
-	submitCost = submitCost.replaceAll(/[^0-9|\.|\-]/g, "");
-	if (submitCost == "") {
-		cost = "0";
-	} else {
-		cost = submitCost;
-	}
-	
+    submitCost = submitCost.replaceAll(/[^0-9|\.|\-]/g, "");
+    if (submitCost == "") {
+      cost = "0";
+    } else {
+      cost = submitCost;
+    }
+
     const submitData = {
       ages: submitAge,
       category: submitCategory,
@@ -100,13 +99,11 @@ function saveSubmitInfo() {
     };
 
     collectionRef.add(submitData).then((docRef) => {
-      
       //image
-      if (ImageFile){
-        uploadPic(docRef.id)
+      if (ImageFile) {
+        uploadPic(docRef.id);
         recordEventIDforUser(docRef.id);
-      }
-      else{
+      } else {
         window.location.href = "thanks.html";
       }
     });
@@ -124,23 +121,25 @@ function recordEventIDforUser(ID) {
   });
 }
 
-
 //upload image
-function uploadPic(eventID) { 
+function uploadPic(eventID) {
   var storageRef = storage.ref("images/" + eventID + ".jpg");
-  storageRef.put(ImageFile)
-      .then(function () {
-          console.log('2. Uploaded to Cloud Storage.');
-          storageRef.getDownloadURL()
-            .then(function (url) {        
-                  db.collection("events").doc(eventID).update({
-                          "image": url
-                      }).then(()=>{
-                        window.location.href = "thanks.html";
-                      })                     
-              })
-      })
-      .catch((error) => {
-           console.log("error uploading to cloud storage");  
-      })
+  storageRef
+    .put(ImageFile)
+    .then(function () {
+      console.log("2. Uploaded to Cloud Storage.");
+      storageRef.getDownloadURL().then(function (url) {
+        db.collection("events")
+          .doc(eventID)
+          .update({
+            image: url,
+          })
+          .then(() => {
+            window.location.href = "thanks.html";
+          });
+      });
+    })
+    .catch((error) => {
+      console.log("error uploading to cloud storage");
+    });
 }
