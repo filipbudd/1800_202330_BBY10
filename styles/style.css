@@ -36,6 +36,7 @@ html {
 
 .card-content {
 	font-size: 30pt;
+    word-wrap: break-word;
 }
 .bookmarks-page-button{
   font-size: 30pt;
@@ -66,6 +67,7 @@ html {
 
 .submitted-event-title {
 	font-size: 20px;
+    word-wrap: break-word;
 }
 
 .event-btn {
@@ -118,9 +120,20 @@ footer {
 /* Change this bottom margin if the size of it changes (Just do your best to estimate it) */
 /* This is so that content doesn't get covered by the fixed footer */
 body {
-  margin-bottom: 110px;
+    margin-bottom: 110px;
+    word-wrap: break-word;
 }
 
 .account-info-icons {
 	font-size: 40pt;
+}
+
+/*BOOTSTRAP OVERRIDE*/
+.navbar {
+    background-color: #A54657 !important;
+    color:white !important;
+}
+
+.material-icons, .navbar-brand, .material-symbols-outlined, .account-info-icons, .mt-3, .text-center {
+    color: #582630 !important;
 }
