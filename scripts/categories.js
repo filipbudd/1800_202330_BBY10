@@ -107,7 +107,7 @@ if (topic == null) {
 					if(!image){
 						image = "/images/image-placeholder.png"
 					}
-					let existingImage = newcard.querySelector('.card-image').innerHTML = "<img class=\"card-image img-fluid\" src=\"" + image + "\" alt=\"Firebase Image\">";
+					let existingImage = newcard.querySelector('.card-image').innerHTML = "<img class=\"card-image card-img-top\" src=\"" + image + "\" alt=\"Firebase Image\">";
 
 					console.log(existingImage);
 

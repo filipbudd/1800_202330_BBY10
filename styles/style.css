@@ -137,3 +137,14 @@ body {
 .material-icons, .navbar-brand, .material-symbols-outlined, .account-info-icons, .mt-3, .text-center {
     color: #582630 !important;
 }
+
+.card-image {
+	max-width: 500px;
+	max-height: 800px;
+}
+
+.category-card {
+	max-width: 500px;
+	min-height:500px;
+	max-height: 800px;
+}
