@@ -212,7 +212,7 @@ function displayEventPageDynamically(collection, sortBy) {
 
 }
 
-displayEventPageDynamically("events", ["submit_time", "desc"]);
+displayEventPageDynamically("events", sortBy());
 
 //updates the page when the sort by options are changed
 $("select").change(function () {

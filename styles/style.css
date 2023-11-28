@@ -71,13 +71,13 @@ html {
 }
 
 .event-btn {
-	max-width: 40px;
-	max-height: 40px;
+	max-width: 50px;
+	max-height: 50px;
 }
 
 .bookmark-btn {
-	max-width: 40px;
-	max-height: 40px;
+	max-width: 50px;
+	max-height: 50px;
 }
 
 #i_editprofile-button {
@@ -150,5 +150,4 @@ body {
 .category-card {
 	max-width: 500px;
 	min-height:500px;
-	max-height: 800px;
 }
