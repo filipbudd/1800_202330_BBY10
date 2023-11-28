@@ -103,9 +103,16 @@ if (topic == null) {
 
 					
 					//These 2 lines handle the image and its route formatting
+					// if image doesn't exist, show a placeholder image
+					if(!image){
+						image = "/images/image-placeholder.png"
+					}
 					let existingImage = newcard.querySelector('.card-image').innerHTML = "<img class=\"card-image img-fluid\" src=\"" + image + "\" alt=\"Firebase Image\">";
+
 					console.log(existingImage);
+
 					existingImage.src = image;
+
 					
 					//This adds the card
 					document.getElementById("events-go-here").appendChild(newcard);
