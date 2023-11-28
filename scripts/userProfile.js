@@ -39,7 +39,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 				$("#mypic-goes-here").attr("src", picUrl);
 
 				//display user submitted events
-				displayThreeSubmittedEvents(submittedEvents);
+				displayThreeSubmittedEvents();
 			} else {
 				// User document does not exist
 				console.log('User document does not exist');
@@ -127,33 +127,36 @@ function displayThreeSubmittedEvents() {
 	
 }
 
-displayThreeSubmittedEvents();
-
 function deleteUserRecordOfEvent(id) {
+	var userID = localStorage.getItem("user");
 	db.collection("events").doc(id).delete();
     var submittedEventRef = db.collection("users")
         .doc(userID);
 	
 	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
-		document.getElementById("i_events-go-here").replaceChildren();
+		document.getElementById("i_events-go-here").replaceChildren("");
 		displaySubmittedEvent();
     });
 }
 
 function deleteSubmittedEvent(id) {
-	db.collection("events").doc(id).get().then(doc => {
-		var image = doc.data().image;
-		var fileRef = storage.refFromURL(image);
-
-		fileRef.delete().then(function(){
-			console.log("Image deleted");
+	if (confirm("Are you sure you want to delete this event?\nYou cannot revert this.") == true) {
+		db.collection("events").doc(id).get().then(doc => {
+			var image = doc.data().image;
+			var fileRef = storage.refFromURL(image);
+	
+			fileRef.delete().then(function(){
+				console.log("Image deleted");
+			});
+	
+			db.collection("events").doc(id).delete().then(() => {
+				console.log("event deleted");
+			});
+			deleteUserRecordOfEvent(id);
 		});
-
-		db.collection("events").doc(id).delete().then(() => {
-			console.log("event deleted");
-		});
-		deleteUserRecordOfEvent(id);
-	});
+	} else {
+		alert("Event Deletion Cancelled");
+	}
+	
 
 }
-
