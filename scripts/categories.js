@@ -22,8 +22,8 @@ function convertDurationDates(date1, date2) {
 //Get sort-by setting
 function sortBy() {
 	let selection = document.getElementById("order-by").value.split(" ");
-	var defaultSelect = ["name", "asc"];
-	if (selection[0] == "name" || selection[0] == "start" || selection[0] == "cost") {
+	var defaultSelect = ["submit_time", "desc"];
+	if (selection[0] == "name" || selection[0] == "start" || selection[0] == "cost" || selection[0] == "submit_time") {
 		return selection;
 	} else {
 		return defaultSelect;
@@ -212,7 +212,7 @@ function displayEventPageDynamically(collection, sortBy) {
 
 }
 
-displayEventPageDynamically("events", ["name", "desc"]);
+displayEventPageDynamically("events", ["submit_time", "desc"]);
 
 //updates the page when the sort by options are changed
 $("select").change(function () {
