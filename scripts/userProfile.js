@@ -140,6 +140,17 @@ function deleteUserRecordOfEvent(id) {
     });
 }
 
+function deleteUserRecordOfEvent(id) {
+	db.collection("events").doc(id).delete();
+    var submittedEventRef = db.collection("users")
+        .doc(userID);
+	
+	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
+		document.getElementById("i_events-go-here").replaceChildren();
+		displaySubmittedEvent();
+    });
+}
+
 function deleteSubmittedEvent(id) {
 	db.collection("events").doc(id).get().then(doc => {
 		var image = doc.data().image;
