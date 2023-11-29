@@ -134,8 +134,8 @@ function deleteUserRecordOfEvent(id) {
         .doc(userID);
 	
 	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
-		document.getElementById("i_events-go-here").replaceChildren("");
-		displaySubmittedEvent();
+		document.getElementById("i_event-titles").replaceChildren();
+		displaySubmittedEvent(id);
     });
 }
 
