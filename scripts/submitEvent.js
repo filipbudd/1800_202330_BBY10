@@ -41,8 +41,6 @@ var ImageFile;
 let fileInput = document.getElementById("uploadImage");
 fileInput.addEventListener("change", function (e) {
   ImageFile = e.target.files[0];
-  var blob = URL.createObjectURL(ImageFile);
-  image.src = blob;
 });
 
 function saveSubmitInfo() {
@@ -108,7 +106,7 @@ function saveSubmitInfo() {
       }
     });
   } else {
-    // location.reload();
+    console.log("something is wrong");
   }
 }
 
