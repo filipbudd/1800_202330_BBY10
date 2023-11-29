@@ -139,6 +139,27 @@ body {
     color:white !important;
 }
 
+.btn {
+	border:none;
+}
+
+.btn-primary {
+	background-color: #582630 !important;
+}
+
+.btn-primary:hover {
+	background-color: #A54657 !important;
+}
+
+.btn-warning {
+	background-color: rgb(236, 161, 69);
+	color: #582630;
+}
+
+.btn-warning:hover {
+	background-color: rgb(255, 195, 122);
+}
+
 .material-icons, .navbar-brand, .material-symbols-outlined, .account-info-icons, .mt-3, .text-center {
     color: #582630 !important;
 }
@@ -150,4 +171,20 @@ body {
 .category-card {
 	max-width: 500px;
 	min-height:500px;
+}
+
+.log-btn {
+	color: #582630;
+	background-color:rgb(236, 161, 69);
+}
+.welcome-container {
+	background-color: white;
+}
+.earth-container {
+	border-bottom: 1px solid #582630;
+	background-color: white;
+}
+
+.breadcrumb-link, .page-link, .text-primary, .accordion-title, #link {
+	color:#A54657 !important;
 }
