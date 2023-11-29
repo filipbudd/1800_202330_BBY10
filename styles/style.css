@@ -188,3 +188,7 @@ body {
 .breadcrumb-link, .page-link, .text-primary, .accordion-title, #link {
 	color:#A54657 !important;
 }
+
+#i_bookmark-icon {
+	font-size: 30pt;
+}
