@@ -113,6 +113,7 @@
                 class="form-control border-dark"
                 id="eventName"
                 placeholder="eg: Chrismas Party"
+				required
               />
             </div>
           </div>
@@ -155,6 +156,7 @@
                     id="multi-day"
                     value="option1"
                     onclick="addDurationField()"
+					required
                   />
                   <label class="form-check-label" for="multi-day">
                     Multi days
@@ -168,6 +170,7 @@
                     id="single-day"
                     value="option2"
                     onclick="addDateField()"
+					required
                   />
                   <label class="form-check-label" for="single-day">
                     Single day
@@ -201,6 +204,7 @@
                 id="description"
                 rows="3"
                 placeholder="Please enter at least 20 words."
+				required
               ></textarea>
             </div>
           </div>
@@ -217,6 +221,7 @@
                 class="form-control border-dark"
                 id="inputHost"
                 placeholder="eg: Your name"
+				required
               />
             </div>
           </div>
@@ -235,6 +240,7 @@
                 id="inputLocation"
                 placeholder="Street, City, Province, Country"
                 onchange="showMap()"
+				required
               />
             </div>
           </div>
@@ -250,6 +256,7 @@
                 class="form-control border-dark"
                 id="cost"
                 placeholder="eg: $5"
+				required
               />
             </div>
           </div>
@@ -261,14 +268,14 @@
               >Upload Image</label
             >
             <div class="col-sm-12 col-lg-5">
-              <input type="file" id="uploadImage" accept="image/*" />
+              <input type="file" id="uploadImage" accept="image/*" required/>
             </div>
           </div>
           <input
-            type="button"
+            type="submit"
             class="btn btn-primary mt-4 mb-4 col-sm-8"
             value="Submit"
-            onclick="saveSubmitInfo()"
+            onsubmit="saveSubmitInfo()"
           />
 
           <div
