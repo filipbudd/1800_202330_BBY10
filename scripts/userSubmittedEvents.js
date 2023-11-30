@@ -36,16 +36,17 @@ function deleteUserRecordOfEvent(id) {
 function deleteSubmittedEvent(id) {
 	if (confirm("Are you sure you want to delete this event?\nYou cannot revert this.") == true) {
 		db.collection("events").doc(id).get().then(doc => {
-			var image = doc.data().image;
-			var fileRef = storage.refFromURL(image);
-	
-			fileRef.delete().then(function(){
-				console.log("Image deleted");
-			});
-	
-			db.collection("events").doc(id).delete().then(() => {
-				console.log("event deleted");
-			});
+			if (image != null) {
+				var fileRef = storage.refFromURL(image);
+
+				fileRef.delete().then(function () {
+					console.log("Image deleted");
+				});
+
+				db.collection("events").doc(id).delete().then(() => {
+					console.log("event deleted");
+				});
+			}
 			deleteUserRecordOfEvent(id);
 		});
 	} else {

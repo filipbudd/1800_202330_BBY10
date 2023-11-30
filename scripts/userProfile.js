@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged(function (user) {
 	if (user) {
-		
+
 
 		// Set the user's UID as a variable
 		var uid = user.uid;
@@ -48,7 +48,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 			console.log('Error fetching user document:', error);
 		});
 
-		
+
 
 
 	} else {
@@ -71,10 +71,10 @@ function convertDurationDates(date1, date2) {
 
 	if (dateArray1[0] == dateArray2[0]) {
 		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " - "
-			+  months[dateArray2[1] - 1]  + " " + dateArray2[2];
+			+ months[dateArray2[1] - 1] + " " + dateArray2[2];
 	} else {
-		return  months[dateArray1[1] - 1] + " " + dateArray1[2]
-			+ " - " +  months[dateArray2[1] - 1] + " " + dateArray2[2];
+		return months[dateArray1[1] - 1] + " " + dateArray1[2]
+			+ " - " + months[dateArray2[1] - 1] + " " + dateArray2[2];
 	}
 }
 
@@ -89,74 +89,77 @@ function displayThreeSubmittedEvents() {
 	submittedEvents.get().then((doc) => {
 		var eventsArray = doc.data().submitEvents;
 		console.log(doc.data().submitEvents);
-		
+
 		if (eventsArray.length == 0) {
 			eventGoHere.innerHTML = "You haven't submitted any events"
 		} else {
-			eventsArray.slice(0,3).forEach(eventID => {
+			eventsArray.slice(0, 3).forEach(eventID => {
 				console.log(eventID);
 				db.collection("events").doc(eventID).get().then(doc => {
 					var title = doc.data().name;
 					var start = doc.data().start;
 					var end = doc.data().end;
 
-					if (start == end){
+					if (start == end) {
 						var date = convertSingleDate(start);
 					} else {
 						var date = convertDurationDates(start, end);
 					}
-	
+
 					var docID = doc.id;
-	
+
 					let newEvent = cardTemplate.content.cloneNode(true);
 					newEvent.querySelector(".submitted-event-title").innerHTML = title;
 					newEvent.querySelector(".submitted-event-title").href = "eachEvent.html?docID=" + docID;
 					newEvent.querySelector(".event-date").innerHTML = date;
 					newEvent.querySelector(".event-btn").onclick = function () { deleteSubmittedEvent(docID); }
-	
+
 					//gonna need to find how to reference specific hike description to link that for the title
-	
+
 					eventGoHere.appendChild(newEvent);
 				});
-	
-	
-	
+
+
+
 			});
 		}
 	})
-	
+
 }
 
 function deleteUserRecordOfEvent(id) {
 	var userID = localStorage.getItem("user");
 	db.collection("events").doc(id).delete();
-    var submittedEventRef = db.collection("users")
-        .doc(userID);
-	
+	var submittedEventRef = db.collection("users")
+		.doc(userID);
+
 	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
 		document.getElementById("i_event-titles").replaceChildren();
-		displaySubmittedEvent(id);
-    });
+		displayThreeSubmittedEvents(id);
+	});
 }
 
 function deleteSubmittedEvent(id) {
 	if (confirm("Are you sure you want to delete this event?\nYou cannot revert this.") == true) {
 		db.collection("events").doc(id).get().then(doc => {
 			var image = doc.data().image;
-			var fileRef = storage.refFromURL(image);
-	
-			fileRef.delete().then(function(){
-				console.log("Image deleted");
-			});
-	
-			db.collection("events").doc(id).delete().then(() => {
-				console.log("event deleted");
-			});
+			if (image != null) {
+				var fileRef = storage.refFromURL(image);
+
+				fileRef.delete().then(function () {
+					console.log("Image deleted");
+				});
+
+				db.collection("events").doc(id).delete().then(() => {
+					console.log("event deleted");
+				});
+			}
+
 			deleteUserRecordOfEvent(id);
 		});
 	} else {
 		alert("Event Deletion Cancelled");
 	}
-	
+
 
 }

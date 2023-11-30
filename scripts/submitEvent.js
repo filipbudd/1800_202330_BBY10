@@ -36,6 +36,14 @@ function addDateField() {
   singleDay.appendChild(dateField);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+	let button = document.getElementById("i_form_submit");
+	if(button.disabled = true){
+		button.disabled = false;
+	}
+	
+});
+
 // upload image
 var ImageFile;
 let fileInput = document.getElementById("uploadImage");
@@ -47,6 +55,7 @@ function saveSubmitInfo() {
 	let form = document.getElementById("i_submit-form");
 	if (form.checkValidity() == true) {
 		if (confirm("Are you sure to submit?")) {
+			let button = document.getElementById("i_form-submit").disabled = true;
 			var collectionRef = db.collection("events");
 		
 			//const user = firebase.auth().currentUser;

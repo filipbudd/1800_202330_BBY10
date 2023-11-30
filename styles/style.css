@@ -192,3 +192,8 @@ body {
 #i_bookmark-icon {
 	font-size: 30pt;
 }
+
+.disabled {
+	opacity: 0.6;
+	cursor:not-allowed;
+}
