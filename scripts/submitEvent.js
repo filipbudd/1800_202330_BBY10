@@ -44,70 +44,76 @@ fileInput.addEventListener("change", function (e) {
 });
 
 function saveSubmitInfo() {
-  if (confirm("Are you sure to submit?")) {
-    var collectionRef = db.collection("events");
-
-    //const user = firebase.auth().currentUser;
-    // let userId = localStorage.getItem("user");
-    // const currentUser = db.collection("users").doc(userId );
-    //a) get user entered values
-    let submitCategory = document.getElementById("category-select").value;
-    let submitAge = document.getElementById("age-select").value;
-    let singleDaySelected = document.getElementById("dateField") !== null;
-    let startDate = "",
-      endDate = "";
-    if (singleDaySelected) {
-      startDate = document.getElementById("dateField").value;
-      endDate = startDate;
-    } else {
-      startDate = document.getElementById("dateFieldStart").value;
-      endDate = document.getElementById("dateFieldEnd").value;
-    }
-
-    let submitDescription = document.getElementById("description").value;
-    let submitHost = document.getElementById("inputHost").value;
-    let submitLocation = document.getElementById("inputLocation").value;
-    let submitTitle = document.getElementById("eventName").value;
-    let submitCost = document.getElementById("cost").value;
-    let latitude = document.getElementById("latitude").value;
-    let longitude = document.getElementById("longitude").value;
-
-    //save
-    let cost;
-    submitCost = submitCost.replaceAll(/[^0-9|\.|\-]/g, "");
-    if (submitCost == "") {
-      cost = "0";
-    } else {
-      cost = submitCost;
-    }
-
-    const submitData = {
-      ages: submitAge,
-      category: submitCategory,
-      address: submitLocation,
-      cost: cost,
-      start: startDate,
-      end: endDate,
-      description: submitDescription,
-      name: submitTitle,
-      host: submitHost,
-      latitude,
-      longitude,
-      submit_time: firebase.firestore.FieldValue.serverTimestamp(),
-    };
-
-    collectionRef.add(submitData).then((docRef) => {
-      //image
-      if (ImageFile) {
-        uploadPic(docRef.id);
-        recordEventIDforUser(docRef.id);
-      } else {
-        window.location.href = "thanks.html";
-      }
-    });
-  } else {
-    console.log("something is wrong");
-  }
+	let form = document.getElementById("i_submit-form");
+	if (form.checkValidity() == true) {
+		if (confirm("Are you sure to submit?")) {
+			var collectionRef = db.collection("events");
+		
+			//const user = firebase.auth().currentUser;
+			// let userId = localStorage.getItem("user");
+			// const currentUser = db.collection("users").doc(userId );
+			//a) get user entered values
+			let submitCategory = document.getElementById("category-select").value;
+			let submitAge = document.getElementById("age-select").value;
+			let singleDaySelected = document.getElementById("dateField") !== null;
+			let startDate = "",
+			  endDate = "";
+			if (singleDaySelected) {
+			  startDate = document.getElementById("dateField").value;
+			  endDate = startDate;
+			} else {
+			  startDate = document.getElementById("dateFieldStart").value;
+			  endDate = document.getElementById("dateFieldEnd").value;
+			}
+		
+			let submitDescription = document.getElementById("description").value;
+			let submitHost = document.getElementById("inputHost").value;
+			let submitLocation = document.getElementById("inputLocation").value;
+			let submitTitle = document.getElementById("eventName").value;
+			let submitCost = document.getElementById("cost").value;
+			let latitude = document.getElementById("latitude").value;
+			let longitude = document.getElementById("longitude").value;
+		
+			//save
+			let cost;
+			submitCost = submitCost.replaceAll(/[^0-9|\.|\-]/g, "");
+			if (submitCost == "") {
+			  cost = "0";
+			} else {
+			  cost = submitCost;
+			}
+		
+			const submitData = {
+			  ages: submitAge,
+			  category: submitCategory,
+			  address: submitLocation,
+			  cost: cost,
+			  start: startDate,
+			  end: endDate,
+			  description: submitDescription,
+			  name: submitTitle,
+			  host: submitHost,
+			  latitude,
+			  longitude,
+			  submit_time: firebase.firestore.FieldValue.serverTimestamp(),
+			};
+		
+			collectionRef.add(submitData).then((docRef) => {
+			  //image
+			  if (ImageFile) {
+				uploadPic(docRef.id);
+				recordEventIDforUser(docRef.id);
+			  } else {
+				window.location.href = "thanks.html";
+			  }
+			});
+		  } else {
+			console.log("something is wrong");
+		  }
+	} else {
+		alert("Please fill out the whole form.")
+	}
+  
 }
 
 // creates array in user doc with id of submitted event recorded
