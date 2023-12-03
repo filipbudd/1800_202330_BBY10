@@ -16,8 +16,8 @@ Technologies used for this project:
 
 ## Contents
 Content of the project folder:
-
- Top level of project folder:
+```
+Top level of project folder:
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
 └── README.md
@@ -75,7 +75,7 @@ Firebase hosting files:
 ├── firestore.indexes.json
 ├── firestore.rules
 ├── storage.rules
-
+```
 ## Limitations
 Here are some known bugs:
 - Set Alarm function is not working for now
