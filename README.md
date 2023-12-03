@@ -1,66 +1,22 @@
-# Project Title
+## CapWise
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Contents](#content)
 
-## 1. Project Description
-<<<<<<< HEAD
-Imagine a world where communities come together to share experiences and events.
+## General Info
+Our web application NearbyNexus, is to help parents and students
+easily find local events they are interested in or submit their own events.
 
-## 2. Names of Contributors
-List team members and/or short bio's here... 
-* I'm Evin I like computers ( !IMPORTANT! There is another contributor under the name tsn.nmi, which is one of my other accounts!)
-* Filip! I'm the epic one who has experience in just about everything. A jack of all trades, if you will.
-* Hi, my name is Carol! I am excited to start this journey of creating a web application!
-* Helo helo, my name is Eugenie. I have no experience outside of python but I was pretty good at the snake language. 
-
-
-## 3. Technologies and Resources Used
-
-List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
-
+## Technologies
+Technologies used for this project:
 - HTML, CSS, JavaScript
 - Bootstrap 4.3(Frontend library)
-- Firebase 8.0 (BAAS - Backend as a Service)
+- Firebase Version 8 (Authentication, Firestore, Storage, Hosting)
 - Mapbox (Reference: https://docs.mapbox.com/mapbox-gl-js/example/marker-from-geocode/)
 
-## 4. Complete setup/installion/usage
-
-State what a user needs to do when they come to your project. How do others start using your code or application?
-Here are the steps ...
-<<<<<<< HEAD
-* - Leave.
-=======
-- If you are a general user:
-- First step: Sign up with your email
-- ...
-- ...
-- If you are a business owner:
-- First step: Sign up with your email
->>>>>>> a6206f90a2f5664b8e28426c46a726fd44a47fc4
-
-## 5. Known Bugs and Limitations
-
-Here are some known bugs:
-<<<<<<< HEAD
-* - None, my coding is perfect.
-=======
-
-- ...
-- ...
-- ...
->>>>>>> a6206f90a2f5664b8e28426c46a726fd44a47fc4
-
-## 6. Features for Future
-
-What we'd like to build in the future:
-
-- ...
-- ...
-- ...
-
-## 7. Contents of Folder
-
+## Contents
 Content of the project folder:
 
-```
  Top level of project folder:
 ├── .gitignore               # Git ignore file
 ├── index.html               # landing HTML file, this is what users see when you come to url
@@ -69,12 +25,65 @@ Content of the project folder:
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
+    /chrismas.png
+    /coconut.jpg
+    /Earth.png
+    /halloween.png
+    /image-placeholder.png
+    /NearbyNexusIcon.png
+    /profilePic.png
+    /ski.png
+    /skii.jpg 
+
 ├── scripts                  # Folder for scripts
-    /blah.js                 #
+    /authentication.js
+    /bookmark.js
+    /categories.js
+    /eachEvent.js
+    /editUserProfile.js
+    /firebaseAPI_TEAM10.js   # firebase API stuff, shared across pages
+    /map.js
+    /past_going.js
+    /script.js
+    /skeleton.js
+    /submitEvent.js
+    /userProfile.js
+    /userSubmittedEvents.js
+
+├── HTML                     # Folder for HTML file
+    /account.html
+    /bookmard.html
+    /categories.html
+    /eachEvent.html
+    /editUserProfile.html
+    /home.html
+    /login.html
+    /past_going.html
+    /submitEvent.html
+    /thanks.html
+    /userSubmittedEvents.html
+
 ├── styles                   # Folder for styles
-    /blah.css                #
+    /style.css               
 
+Firebase hosting files:
+├── .firebase
+	/hosting..cache
+├── .firebaserc
+├── 404.html
+├── firebase.json
+├── firestore.indexes.json
+├── firestore.rules
+├── storage.rules
 
+## Limitations
+Here are some known bugs:
+- Set Alarm function is not working for now
+- Attended events feature is not working for now
+- ...
 
-```
+## Resources
+
+## Contact 
+
+## Acknowledgements 
