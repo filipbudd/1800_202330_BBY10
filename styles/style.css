@@ -1,45 +1,53 @@
 .spinning-earth {
-  animation: rotation 50s infinite linear;
+	animation: rotation 50s infinite linear;
 }
 
 @keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(359deg);
+	}
 }
 
-h1, h2, h3, .navbar-brand {
-    font-family: 'Changa', sans-serif;
+h1,
+h2,
+h3,
+.navbar-brand {
+	font-family: 'Changa', sans-serif;
 }
 
-p, div, body {
-    font-family: 'Sometype Mono', monospace;
+p,
+div,
+body {
+	font-family: 'Sometype Mono', monospace;
 }
 
 html {
-  scroll-behavior: smooth;
- }
-
-#account-pic{
-  border-radius:50px;
-}
-#account-info{
-  height: 300px;
+	scroll-behavior: smooth;
 }
 
-#i_bookmarks-button{
-  font-size: 30pt;
+#account-pic {
+	border-radius: 50px;
+}
+
+#account-info {
+	height: 300px;
+}
+
+#i_bookmarks-button {
+	font-size: 30pt;
 }
 
 .card-content {
 	font-size: 30pt;
-    word-wrap: break-word;
+	word-wrap: break-word;
 }
-.bookmarks-page-button{
-  font-size: 30pt;
+
+.bookmarks-page-button {
+	font-size: 30pt;
 }
 
 .back-arrow {
@@ -48,16 +56,16 @@ html {
 }
 
 .truncate {
-  overflow: hidden;
-  text-overflow:ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-          line-clamp: 2;
-  -webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 .order-by-label {
-	font-size:10pt;
+	font-size: 10pt;
 }
 
 #i_dropdown-filter {
@@ -67,7 +75,7 @@ html {
 
 .submitted-event-title {
 	font-size: 20px;
-    word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .event-btn {
@@ -81,43 +89,44 @@ html {
 }
 
 #i_editprofile-button {
-    font-size: 30pt;
+	font-size: 30pt;
 }
 
 #mypic-goes-here {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 50%;
 }
 
 .btn:hover .material-icons {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-        transition: box-shadow 0.3s ease;
-    }
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+	transition: box-shadow 0.3s ease;
+}
 
 #profilebutton {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
 }
 
 #account-info {
-    min-height: 100px;
-    word-wrap: break-word; 
+	min-height: 100px;
+	word-wrap: break-word;
 }
 
 footer {
-  position: fixed;
-  height: 100px;
-  bottom: 0;
-  width: 100%;
+	position: fixed;
+	height: 100px;
+	bottom: 0;
+	width: 100%;
 }
+
 body {
-    margin-bottom: 110px;
-    word-wrap: break-word;
+	margin-bottom: 110px;
+	word-wrap: break-word;
 }
 
 .account-info-icons {
@@ -125,22 +134,22 @@ body {
 }
 
 .container a {
-  display: inline-block;
-  transition: transform 0.3s ease-in-out;
+	display: inline-block;
+	transition: transform 0.3s ease-in-out;
 }
 
 .container a:hover {
-  transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 /*BOOTSTRAP OVERRIDE*/
 .navbar {
-    background-color: #A54657 !important;
-    color:white !important;
+	background-color: #A54657 !important;
+	color: white !important;
 }
 
 .btn {
-	border:none;
+	border: none;
 }
 
 .btn-primary {
@@ -160,9 +169,15 @@ body {
 	background-color: rgb(255, 195, 122);
 }
 
-.material-icons, .navbar-brand, .material-symbols-outlined, .account-info-icons, .mt-3, .text-center {
-    color: #582630 !important;
+.material-icons,
+.navbar-brand,
+.material-symbols-outlined,
+.account-info-icons,
+.mt-3,
+.text-center {
+	color: #582630 !important;
 }
+
 .card-image {
 	max-width: 500px;
 	max-height: 800px;
@@ -170,23 +185,29 @@ body {
 
 .category-card {
 	max-width: 500px;
-	min-height:500px;
+	min-height: 500px;
 }
 
 .log-btn {
 	color: #582630;
-	background-color:rgb(236, 161, 69);
+	background-color: rgb(236, 161, 69);
 }
+
 .welcome-container {
 	background-color: white;
 }
+
 .earth-container {
 	border-bottom: 1px solid #582630;
 	background-color: white;
 }
 
-.breadcrumb-link, .page-link, .text-primary, .accordion-title, #link {
-	color:#A54657 !important;
+.breadcrumb-link,
+.page-link,
+.text-primary,
+.accordion-title,
+#link {
+	color: #A54657 !important;
 }
 
 #i_bookmark-icon {
@@ -195,5 +216,5 @@ body {
 
 .disabled {
 	opacity: 0.6;
-	cursor:not-allowed;
+	cursor: not-allowed;
 }

@@ -1,6 +1,5 @@
-firebase.auth().onAuthStateChanged(function (user) {
+firebase.auth().onAuthStateChanged(function(user) {
 	if (user) {
-
 
 		// Set the user's UID as a variable
 		var uid = user.uid;
@@ -8,7 +7,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 		// Fetch the user document from Firestore
 		var userDocRef = firebase.firestore().collection("users").doc(uid);
 
-		userDocRef.get().then(function (doc) {
+		userDocRef.get().then(function(doc) {
 			if (doc.exists) {
 				// User document exists; you can access its data
 				var name = doc.data().name;
@@ -30,8 +29,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 					var bioElement = document.getElementById('user-bio'); // Assuming the id is 'bioInput'
 					bioElement.style.wordWrap = 'break-word';
 					bioElement.style.maxWidth = '400px';
-				}
-				else {
+				} else {
 					document.getElementById('user-bio').textContent = "This is a chance for you to share your story, interesting human!.";
 				}
 
@@ -44,19 +42,15 @@ firebase.auth().onAuthStateChanged(function (user) {
 				// User document does not exist
 				console.log('User document does not exist');
 			}
-		}).catch(function (error) {
+		}).catch(function(error) {
 			console.log('Error fetching user document:', error);
 		});
-
-
-
 
 	} else {
 		// User is not signed in
 		console.log('User is not signed in');
 	}
 });
-
 
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 //turn number dates to words
@@ -70,14 +64,13 @@ function convertDurationDates(date1, date2) {
 	let dateArray2 = date2.split("-");
 
 	if (dateArray1[0] == dateArray2[0]) {
-		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " - "
-			+ months[dateArray2[1] - 1] + " " + dateArray2[2];
+		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " - " +
+			months[dateArray2[1] - 1] + " " + dateArray2[2];
 	} else {
-		return months[dateArray1[1] - 1] + " " + dateArray1[2]
-			+ " - " + months[dateArray2[1] - 1] + " " + dateArray2[2];
+		return months[dateArray1[1] - 1] + " " + dateArray1[2] +
+			" - " + months[dateArray2[1] - 1] + " " + dateArray2[2];
 	}
 }
-
 
 function displayThreeSubmittedEvents() {
 	let cardTemplate = document.getElementById("i_event-title-template");
@@ -112,14 +105,14 @@ function displayThreeSubmittedEvents() {
 					newEvent.querySelector(".submitted-event-title").innerHTML = title;
 					newEvent.querySelector(".submitted-event-title").href = "eachEvent.html?docID=" + docID;
 					newEvent.querySelector(".event-date").innerHTML = date;
-					newEvent.querySelector(".event-btn").onclick = function () { deleteSubmittedEvent(docID); }
+					newEvent.querySelector(".event-btn").onclick = function() {
+						deleteSubmittedEvent(docID);
+					}
 
 					//gonna need to find how to reference specific hike description to link that for the title
 
 					eventGoHere.appendChild(newEvent);
 				});
-
-
 
 			});
 		}
@@ -133,7 +126,9 @@ function deleteUserRecordOfEvent(id) {
 	var submittedEventRef = db.collection("users")
 		.doc(userID);
 
-	submittedEventRef.update({ submitEvents: firebase.firestore.FieldValue.arrayRemove(id) }).then(refresh => {
+	submittedEventRef.update({
+		submitEvents: firebase.firestore.FieldValue.arrayRemove(id)
+	}).then(refresh => {
 		document.getElementById("i_event-titles").replaceChildren();
 		displayThreeSubmittedEvents(id);
 	});
@@ -146,7 +141,7 @@ function deleteSubmittedEvent(id) {
 			if (image != null) {
 				var fileRef = storage.refFromURL(image);
 
-				fileRef.delete().then(function () {
+				fileRef.delete().then(function() {
 					console.log("Image deleted");
 				});
 
@@ -160,6 +155,5 @@ function deleteSubmittedEvent(id) {
 	} else {
 		alert("Event Deletion Cancelled");
 	}
-
 
 }

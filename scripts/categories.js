@@ -1,4 +1,3 @@
-
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 //turn number dates to words
 function convertSingleDate(date) {
@@ -11,11 +10,11 @@ function convertDurationDates(date1, date2) {
 	dateArray2 = date2.split("-");
 
 	if (dateArray1[0] == dateArray2[0]) {
-		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " to "
-			+ months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray1[0];
+		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " to " +
+			months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray1[0];
 	} else {
-		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " " + dateArray1[0]
-			+ " - " + months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray2[0];
+		return months[dateArray1[1] - 1] + " " + dateArray1[2] + " " + dateArray1[0] +
+			" - " + months[dateArray2[1] - 1] + " " + dateArray2[2] + " " + dateArray2[0];
 	}
 }
 
@@ -30,8 +29,6 @@ function sortBy() {
 	}
 }
 
-
-
 //Get the topic from the URL (look at the url, this is for the category sort) 
 let params = new URL(window.location.href);
 var topic = params.searchParams.get("topic");
@@ -42,8 +39,9 @@ function formatQuery(query) {
 	return lowercase.charAt(0).toUpperCase() + lowercase.slice(1)
 }
 
-if (topic != null) { topic = formatQuery(topic); }
-
+if (topic != null) {
+	topic = formatQuery(topic);
+}
 
 if (topic == null) {
 	//This function displays the cards on the 'categories.html' file (ALL)
@@ -52,7 +50,7 @@ if (topic == null) {
 		// determine sorting values
 		let sort = sortBy[0];
 		let order = sortBy[1];
-	
+
 		//gets the card template id
 		let cardTemplate = document.getElementById("categoryCardTemplate");
 
@@ -72,7 +70,6 @@ if (topic == null) {
 					var name = doc.data().name;
 					var start = doc.data().start;
 					var end = doc.data().end;
-					
 
 					// Generate date using start and end
 					if (start == end) {
@@ -101,10 +98,9 @@ if (topic == null) {
 					newcard.querySelector('.card-category').innerHTML = category;
 					newcard.querySelector('.card-cost').innerHTML = cost;
 
-					
 					//These 2 lines handle the image and its route formatting
 					// if image doesn't exist, show a placeholder image
-					if(!image){
+					if (!image) {
 						image = "/images/image-placeholder.png"
 					}
 					let existingImage = newcard.querySelector('.card-image').innerHTML = "<img class=\"card-image card-img-top\" src=\"" + image + "\" alt=\"Firebase Image\">";
@@ -113,7 +109,6 @@ if (topic == null) {
 
 					existingImage.src = image;
 
-					
 					//This adds the card
 					document.getElementById("events-go-here").appendChild(newcard);
 
@@ -125,10 +120,6 @@ if (topic == null) {
 
 	}
 }
-
-
-
-
 
 //This function displays the cards on the 'categories.html' file (SORTED BY TOPIC)
 function displayEventPageDynamically(collection, sortBy) {
@@ -194,7 +185,6 @@ function displayEventPageDynamically(collection, sortBy) {
 					let existingImage = newcard.querySelector('.card-image').innerHTML = "<img class=\"card-image img-fluid\" src=\"" + image + "\" alt=\"Firebase Image\">";
 					console.log(existingImage);
 					existingImage.src = image;
-					
 
 					//This adds the card
 					document.getElementById("events-go-here").appendChild(newcard);
@@ -215,7 +205,7 @@ function displayEventPageDynamically(collection, sortBy) {
 displayEventPageDynamically("events", sortBy());
 
 //updates the page when the sort by options are changed
-$("select").change(function () {
+$("select").change(function() {
 	document.getElementById("events-go-here").replaceChildren();
 	displayEventPageDynamically("events", sortBy());
 });
