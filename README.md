@@ -80,11 +80,12 @@ Firebase hosting files:
 ├── storage.rules
 ```
 ## Limitations
-Here are some known bugs:
+Here are some known issues:
 - Set Alarm function is not working for now
 - Attended events feature is not working for now
 - Unimplemented error page
-- 
+- Events are not editable
+- There is no option to report events
 
 ## Resources
 - Tech Tips
