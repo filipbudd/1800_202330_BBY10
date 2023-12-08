@@ -27,19 +27,19 @@ It has the following subfolders and files:
 	/hosting..cache
 
 ├── images                   # Folder for images
-    /chrismas.png
-    /coconut.jpg
-    /Earth.png
-    /halloween.png
-    /image-placeholder.png
-    /NearbyNexusIcon.png
-    /profilePic.png
-    /ski.png
-    /skii.jpg 
+    /chrismas.png			 # Image for carousel on landing page
+    /coconut.jpg			 # An inside joke made by our manager
+    /Earth.png			 	 # Used for the spinning earth on the landing pages
+    /halloween.png			 # Image for carousel on landing page
+    /image-placeholder.png			 # Placeholder image for events submitted without an image
+    /NearbyNexusIcon.png			 # Favicon for the website
+    /profilePic.png 			 # Default profile image
+    /ski.png 			 # Image for carousel on landing page
+    /skii.jpg  			 # Image for carousel on landing page
 
 ├── scripts                  # Folder for scripts
     /authentication.js		 # Functions for the log in page
-    /bookmarks.js			 # Fucntions for bookmarks page
+    /bookmarks.js			 # Fucntions for user bookmarks page
     /categories.js			 # Functions for the event browsing page
     /eachEvent.js			 # Functions for event description pages
     /editUserProfile.js		 # Functions for edit user profile form page
@@ -47,24 +47,24 @@ It has the following subfolders and files:
     /map.js					 # Function that shows map on pages
     /past_going.js			 # Functions for the attended events page (not used in the project)
     /script.js				 # Inside joke amoung the team we didn't want to delete
-    /skeleton.js			 # Functions 
-    /submitEvent.js
-    /userProfile.js
-    /userSubmittedEvents.js
+    /skeleton.js			 # Functions to display footer and header on all pages
+    /submitEvent.js 		 # Functions for event submission form page
+    /userProfile.js			 # Functions for user profile page
+    /userSubmittedEvents.js	 # Functions for user submitted events
 
 ├── HTML                     # Folder for HTML file
-    /account.html
-    /bookmarks.html
-    /categories.html
-    /eachEvent.html
-    /editUserProfile.html
-    /home.html
-    /login.html
-    /past_going.html
-	/siteerror.html
-    /submitEvent.html
-    /thanks.html
-    /userSubmittedEvents.html
+    /account.html			 # User profile page
+    /bookmarks.html			 # User bookmarks page
+    /categories.html		 # Event browsing  page
+    /eachEvent.html			 # Event description page (functions like a template)
+    /editUserProfile.html	 # User profile editing page
+    /home.html				 # Landing page after logging in
+    /login.html				 # Login page
+    /past_going.html		 # Attended events page
+	/siteerror.html			 # Error page (unused but this is evidence that we tried)
+    /submitEvent.html		 # Event submission form page
+    /thanks.html			 # Thank you page of after submitting an event
+    /userSubmittedEvents.html	 # User submitted events page
 
 ├── styles                   # Folder for styles
     /style.css               # holds styles that are applied on all html files
