@@ -92,6 +92,7 @@ Here are some known issues:
 - Firebase
 - In-app icons from Google Icons (Open Source https://fonts.google.com/)
 ## Contact 
+* Filip Budd - fbudd1@my.bcit.ca
 * Eugenie Kim - ekim138@my.bcit.ca
 * Evin Gonzales - egonzales20@my.bcit.ca
 * Carol Li - zli237@my.bcit.ca
