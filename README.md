@@ -83,7 +83,8 @@ Firebase hosting files:
 Here are some known bugs:
 - Set Alarm function is not working for now
 - Attended events feature is not working for now
-- ...
+- Unimplemented error page
+- 
 
 ## Resources
 
