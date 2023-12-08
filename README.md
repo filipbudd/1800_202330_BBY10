@@ -87,8 +87,12 @@ Here are some known bugs:
 - 
 
 ## Resources
-
+- Tech Tips
+- Firebase
+- In-app icons from Google Icons (Open Source https://fonts.google.com/)
 ## Contact 
 * Eugenie Kim - ekim138@my.bcit.ca
-
+* Evin Gonzales egonzales20@my.bcit.ca
 ## Acknowledgements 
+* <a href="https://fonts.google.com/">Google Fonts</a>
+* <a href="https://getbootstrap.com/">Bootstrap</a>
