@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Log in</title>
-        <link rel="icon" type="image/x-icon" href="../images/NearbyNexusIcon.png">
+  <head>
+    <title>Log in</title>
+    <link rel="icon" type="image/x-icon" href="../images/NearbyNexusIcon.png" />
 
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script     src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <!-- Bootstrap Library CSS CDN go here -->
-        <!-- Boostrap Library JS CDN  go here -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-        <!-- Other libraries go here -->
-        <!-- Google Icons (Material Design)-->
+    <!-- Bootstrap Library CSS CDN go here -->
+    <!-- Boostrap Library JS CDN  go here -->
     <link
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet"
-  />
-        
-        <!-------------------------------------------------------->
-        <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-        <!-------------------------------------------------------->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css">
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
-        <!-- Link to styles of your own -->
-        <link rel="stylesheet" href="/styles/style.css" />
-    </head>
-    
-    <body>
-    
-        <!------------------------------>
-        <!-- Your HTML Layout go here -->
-        <!------------------------------>
-        <!--Navbar-->
-		<nav id="navPlaceholderNoUser"></nav>
+    <!-- Other libraries go here -->
+    <!-- Google Icons (Material Design)-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-        <!-- the body of your page goes here -->
-        <div class="container m-5">
-            <h1>Let's sign in!</h1>
-        </div>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
 
-        <!-- our own footer goes here-->
-        <!--Footer!-->
-		<!--<footer id="footerPlaceholder"></footer>-->
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
 
-        <!---------------------------------------------->
-        <!-- Your own JavaScript functions go here    -->
-        <!---------------------------------------------->
-        <script src="/scripts/firebaseAPI_TEAM10.js"></script>
-        <script src="/scripts/authentication.js"></script>
-		<script src="/scripts/skeleton.js"></script>
-		<script src="/scripts/script.js"></script>
-    
-    </body>
+  <body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+    <!--Navbar-->
+    <nav id="navPlaceholderNoUser"></nav>
+
+    <!-- the body of your page goes here -->
+    <div class="container m-5">
+      <h1>Let's sign in!</h1>
+    </div>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+
+    <!-- our own footer goes here-->
+    <!--Footer!-->
+    <!--<footer id="footerPlaceholder"></footer>-->
+
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="/scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="/scripts/authentication.js"></script>
+    <script src="/scripts/skeleton.js"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
 </html>
