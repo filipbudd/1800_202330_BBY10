@@ -107,7 +107,7 @@ function saveUserInfo() {
 								.then(function() {
 									console.log('Added Profile Pic URL to Firestore.');
 									console.log('Saved user profile info');
-									document.getElementById('personalInfoField).disabled = true;
+									document.getElementById('personalInfoField').disabled = true;
 								})
 						})
 				})
